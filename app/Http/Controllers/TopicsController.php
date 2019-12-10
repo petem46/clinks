@@ -24,7 +24,13 @@ class TopicsController extends Controller
      */
     public function create()
     {
-        //
+        $data = [
+            'subject_id' => session('subject_id'),
+            'subject_name' => session('subject_name'),
+        ];
+        // dd($data);
+        return view('topics.new', $data);
+
     }
 
     /**

@@ -64,14 +64,14 @@ class SubjectsController extends Controller
      * @param  \App\Subject  $subject
      * @return \Illuminate\Http\Response
      */
-    public function show(Subject $subject, $id)
+    public function show($id)
     {
-        session(['subject_id' => $subject->id]);
         $data = [
             'subject' => Subject::find($id)
         ];
 
-        dd($data);
+        session(['subject_id' => $id]);
+        session(['subject_name' => Subject::select('name')->find($id)->name]);
 
         return view('subjects.view', $data);
     }

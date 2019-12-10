@@ -16,6 +16,7 @@ class CreateTopicsTable extends Migration
         Schema::create('topics', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name', 250);
+            $table->integer('week');
             $table->text('description');
             $table->integer('subject_id');
             $table->timestamps();
