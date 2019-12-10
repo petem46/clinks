@@ -1,0 +1,77 @@
+// Body
+$body-bg: #f8fafc;
+
+// Typography
+$font-family-sans-serif: 'Nunito', sans-serif;
+$font-size-base: 0.95rem;
+$line-height-base: 1.6;
+
+// Colors
+$primary:       #00615A !default;
+$success:       #009D92 !default;
+$blue:          #3490dc;
+$indigo:        #6574cd;
+$purple:        #9561e2;
+$pink:          #e83e8c !default;
+$red:           #e3342f;
+$orange:        #f6993f;
+$yellow:        #ffed4a;
+$green:         #38c172;
+$teal:          #4dc0b5;
+$cyan:          #6cb2eb;
+$darkorange:    darkorange !default;
+$white:         white !default;
+$light:         lightslategrey;
+
+$colors: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$colors: map-merge(
+  (
+    "blue":       $blue,
+    "indigo":     $indigo,
+    "purple":     $purple,
+    "pink":       $pink,
+    "red":        $red,
+    "orange":     $orange,
+    "yellow":     $yellow,
+    "green":      $green,
+    "teal":       $teal,
+    "cyan":       $cyan,
+    "darkorange": $darkorange,
+    "light":      $light,
+  ),
+  $colors
+);
+
+$theme-colors: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$theme-colors: map-merge(
+  (
+    "primary":    $primary,
+    "success":    $success,
+    "warning":    $darkorange,
+    "danger":     crimson,
+    "info":       steelblue,
+    "light":      $light,
+    "blue":       $blue,
+    "indigo":     $indigo,
+    "purple":     $purple,
+    "pink":       $pink,
+    "red":        $red,
+    "orange":     $orange,
+    "yellow":     $yellow,
+    "green":      $green,
+    "teal":       $teal,
+    "cyan":       $cyan,
+    "darkorange": $darkorange,
+  ),
+  $theme-colors
+);
+
+// navbar Customisation
+$navbar-brand-colour: #ffffff;
+$navbar-nav-link-font-color: #ffffff;
+$navbar-dark-color: rgba(255,255,255, .9) !default;
+$navbar-dark-hover-color: rgba(255,255,255 , 1) !default;
+
+
