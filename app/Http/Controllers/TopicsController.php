@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Topics;
+use App\Topic;
 use Illuminate\Http\Request;
 
 class TopicsController extends Controller
@@ -25,8 +25,8 @@ class TopicsController extends Controller
     public function create()
     {
         $data = [
-            'subject_id' => session('subject_id'),
-            'subject_name' => session('subject_name'),
+            'subjectid' => session('subject_id'),
+            'subjectname' => session('subject_name'),
         ];
         // dd($data);
         return view('topics.new', $data);
@@ -41,7 +41,25 @@ class TopicsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->flash();
+
+        //validation
+        $request->validate([
+            //
+        ],
+        [
+            //
+        ]);
+
+        $topic = Topic::create([
+            'name' => $request->name,
+            'subject_id' => $request->subject_id,
+            'week' => $request->week,
+            'description' => $request->description,
+        ]);
+
+        return redirect('/subjects/'.$request->subject_id)->with('success','Topic Added Successfully');
+
     }
 
     /**
@@ -50,9 +68,13 @@ class TopicsController extends Controller
      * @param  \App\Topics  $topics
      * @return \Illuminate\Http\Response
      */
-    public function show(Topics $topics)
+    public function show($id)
     {
-        //
+        $data = [
+            'topic' => Topic::with('subject')->with('clink')->with('clinked')->find($id),
+        ];
+        // dd($data);
+        return view('topics.view', $data);
     }
 
     /**
@@ -75,7 +97,7 @@ class TopicsController extends Controller
      */
     public function update(Request $request, Topics $topics)
     {
-        //
+        $topic->topic()->attach($linktopicid);
     }
 
     /**

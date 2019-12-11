@@ -13,6 +13,7 @@ class YearsTableSeeder extends Seeder
      */
     public function run()
     {
+      DB::unprepared('SET IDENTITY_INSERT years ON');
        DB::table('years')->insert(array(
          array(
            'id' => 1,
@@ -59,5 +60,6 @@ class YearsTableSeeder extends Seeder
            'name' => 'Year 11',
          ),
        ));
+       DB::unprepared('SET IDENTITY_INSERT years OFF');
     }
 }

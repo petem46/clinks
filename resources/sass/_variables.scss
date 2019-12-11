@@ -22,6 +22,7 @@ $cyan:          #6cb2eb;
 $darkorange:    darkorange !default;
 $white:         white !default;
 $light:         lightslategrey;
+$linen:         linen;
 
 $colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -39,6 +40,7 @@ $colors: map-merge(
     "cyan":       $cyan,
     "darkorange": $darkorange,
     "light":      $light,
+    "linen":      $linen,
   ),
   $colors
 );
@@ -64,6 +66,7 @@ $theme-colors: map-merge(
     "teal":       $teal,
     "cyan":       $cyan,
     "darkorange": $darkorange,
+    "linen":      $linen,
   ),
   $theme-colors
 );

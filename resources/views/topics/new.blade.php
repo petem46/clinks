@@ -20,8 +20,8 @@
         <div class="form-group row m-3">
             <label for="subject_id" class="col-sm-2 col-form-label">Subject</label>
             <div class="col-sm-10">
-                <select id="subject_id" name="subject_id" class="form-control" disabled>
-                    <option selected value="{{$subject_id}}">{{$subject_name}} </option>
+                <select id="subject_id" name="subject_id" class="form-control">
+                    <option value="{{$subjectid}}">{{$subjectname}} </option>
                 </select>
             </div>
         </div>

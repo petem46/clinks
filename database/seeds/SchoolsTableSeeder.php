@@ -13,6 +13,7 @@ class SchoolsTableSeeder extends Seeder
      */
     public function run()
     {
+      DB::unprepared('SET IDENTITY_INSERT schools ON');
        DB::table('schools')->insert(array(
          array(
            'id' => 1,
@@ -35,5 +36,7 @@ class SchoolsTableSeeder extends Seeder
            'name' => 'Unity',
          ),
        ));
+       DB::unprepared('SET IDENTITY_INSERT schools OFF');
+
     }
 }

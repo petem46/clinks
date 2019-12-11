@@ -13,6 +13,7 @@ class KeystagesTableSeeder extends Seeder
      */
     public function run()
     {
+      DB::unprepared('SET IDENTITY_INSERT keystages ON');
        DB::table('keystages')->insert(array(
         array(
           'id' => 1,
@@ -35,6 +36,6 @@ class KeystagesTableSeeder extends Seeder
           'name' => 'Key Stage 4',
         ),
       ));
-
+      DB::unprepared('SET IDENTITY_INSERT keystages OFF');
     }
 }

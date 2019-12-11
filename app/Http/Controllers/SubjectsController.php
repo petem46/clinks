@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Keystage;
 use App\School;
 use App\Subject;
+use App\Topic;
 use App\Year;
 
 use Illuminate\Http\Request;
@@ -54,7 +55,7 @@ class SubjectsController extends Controller
             'keystage_id' => $request->keystage_id,
         ]);
 
-        return redirect('/subjects/'.$subject->id.'/edit')->with('success','Subject Added Successfully');
+        return redirect('/subjects/'.$subject->id)->with('success','Subject Added Successfully');
 
     }
 
@@ -67,7 +68,8 @@ class SubjectsController extends Controller
     public function show($id)
     {
         $data = [
-            'subject' => Subject::find($id)
+            'subject' => Subject::with('topic')->find($id),
+            'topics' => Topic::with('clink')->where('subject_id', $id)->orderBy('week', 'asc')->get(),
         ];
 
         session(['subject_id' => $id]);
