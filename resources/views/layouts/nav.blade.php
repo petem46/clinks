@@ -1,4 +1,4 @@
-<nav class="navbar navbar-dark navbar-expand-lg bg-red shadow-sm p-0">
+<nav class="navbar navbar-dark navbar-expand-lg bg-dark shadow-sm p-0">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
             <i class="fas fa-code-branch fa-2x fa-fw"></i>  CurricuLinks
@@ -49,16 +49,14 @@
                 </li>
                 <li class="nav-item mr-3">
                     {{-- <a class="nav-link text-center" href="{{url('/logout')}}"><i class="fas fa-cogs fa-2x fa-fw"></i><br><span class="d-lg-none_">{{ __('Log Out') }}</a> --}}
-                        <a class="nav-link js-scroll-trigger" href="{{ route('logout') }}"
-                        onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();">
+                    <a class="nav-link text-center" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         <i class="fas fa-cogs fa-2x fa-fw"></i><br><span class="d-lg-none_">{{ __('Log Out') }}
-                            {{-- ({{ Auth::user()->name }}) --}}
-                      </a>
-                      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                      </form>
-                    </li>
+                        {{-- ({{ Auth::user()->name }}) --}}
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                    </form>
+                </li>
             @endguest
         </ul>
     </div>

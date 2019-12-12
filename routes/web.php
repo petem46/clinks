@@ -22,4 +22,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('subjects', 'SubjectsController');
 Route::resource('topics', 'TopicsController');
+Route::get('/topics/link/{id}', 'TopicsController@link');
+Route::get('/topics/clink/{id}/{clinkid}', 'TopicsController@clink');
 

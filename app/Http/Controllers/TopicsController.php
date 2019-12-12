@@ -3,25 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Topic;
+use App\Clink;
 use Illuminate\Http\Request;
 
 class TopicsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         $data = [
@@ -33,12 +25,6 @@ class TopicsController extends Controller
 
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $request->flash();
@@ -62,12 +48,6 @@ class TopicsController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Topics  $topics
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         $data = [
@@ -77,35 +57,40 @@ class TopicsController extends Controller
         return view('topics.view', $data);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Topics  $topics
-     * @return \Illuminate\Http\Response
-     */
+    public function link($id)
+    {
+        $topic = Topic::with('subject')->find($id);
+        $ksid = $topic->subject['keystage_id'];
+        $subjectid = $topic->subject_id;
+        $data = [
+            'topic' => Topic::with('subject')->find($id),
+            'clinks' => Topic::with('subject')->whereHas('Subject', function($q) use($ksid){
+                $q->where('keystage_id',"=",$ksid);
+            })->where('subject_id', "!=", $subjectid)->orderBy('subject_id')->get(),
+        ];
+        // dd($data);
+        return view('topics.clink', $data);
+    }
+
+    public function clink($id, $clinkid)
+    {
+        $topic = Topic::find($id);
+        $topic->clink()->attach($clinkid);
+
+        return redirect('/subjects/'. $topic->subject_id);
+
+    }
+
     public function edit(Topics $topics)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Topics  $topics
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Topics $topics)
     {
         $topic->topic()->attach($linktopicid);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Topics  $topics
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Topics $topics)
     {
         //

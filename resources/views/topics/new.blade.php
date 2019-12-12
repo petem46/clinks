@@ -1,13 +1,11 @@
 @extends('layouts.app')
 @section('content')
 <div class="topics container">
-  <div class="row">
+        <h6 class="text-muted">Small heading </h6>
+        <h1 class="display-4">Add Topic</h1>
+    <hr>
+    <div class="row">
     <div class="col-md-12 mb-3">
-      <div class="card-header bg-teal text-white">
-        <div class="card-title">
-          <h3><i class="fas fa-network-wired"></i>&nbsp;&nbsp;Add Topic</h3>
-        </div>
-      </div>
       <form action="/topics" method="POST" id="topicsnew" class="form-horizontal" enctype="multipart/form-data">
         @method('POST')
         {{ csrf_field() }}
@@ -46,7 +44,7 @@
             </div>
         </div>
         <div class="form-group row m-3">
-            <label for="description" class="col-sm-2 col-form-label">Topic Title</label>
+            <label for="description" class="col-sm-2 col-form-label">Topic Content</label>
             <div class="col-sm-10">
                 <textarea name="description" rows=10 class="form-control" id="description" placeholder="Details of topic content"></textarea>
             </div>

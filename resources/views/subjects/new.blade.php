@@ -1,14 +1,12 @@
 @extends('layouts.app')
 @section('content')
 <div class="subjects container">
+        <h6 class="text-muted">Small heading </h6>
+        <h1 class="display-4">Add Subject</h1>
+    <hr>
   <div class="row">
     <div class="col-md-12 mb-3">
-      <div class="card-header bg-primary text-white">
-        <div class="card-title">
-          <h3><i class="fas fa-network-wired"></i>&nbsp;&nbsp;Add Subject</h3>
-        </div>
-      </div>
-      <form action="/subjects" method="POST" id="subjectsnew" class="form-horizontal" enctype="multipart/form-data">
+          <form action="/subjects" method="POST" id="subjectsnew" class="form-horizontal" enctype="multipart/form-data">
         @method('POST')
         {{ csrf_field() }}
         <div class="form-group row m-3">
@@ -51,6 +49,12 @@
                 </select>
             </div>
         </div>
+        <div class="form-group row m-3">
+                <label for="intent" class="col-sm-2 col-form-label">Statement of Intent</label>
+                <div class="col-sm-10">
+                    <textarea name="intent" rows=10 class="form-control" id="intent" placeholder="Statement of intent"></textarea>
+                </div>
+            </div>
 
 
         {{-- FORM SUBMIT AND CANCEL BUTTONS --}}
@@ -59,7 +63,7 @@
             <button type="button" onclick="goBack()" class="col-12 col-md-5 mb-3 mb-md-0 btn btn-secondary order-2 order-md-1">
               <i class="fas fa-arrow-left"></i>&nbsp;&nbsp;Cancel
             </button>
-            <button type="submit" class="col-12 col-md-5 offset-md-2 mb-3 mb-md-0 btn btn-success order-1 order-md-2">
+            <button type="submit" class="col-12 col-md-5 offset-md-2 mb-3 mb-md-0 btn btn-green order-1 order-md-2">
               <i class="fas fa-save"></i>&nbsp;&nbsp;Add Subject
             </button>
           </div>

@@ -1,9 +1,21 @@
 @extends('layouts.app')
 @section('content')
 <div class="indexsubjects container">
-<h1>Subjects</h1>
-<table class="table">
-<thead>
+    <h6 class="text-muted">Small heading </h6>
+    <h1 class="display-4">Subject List</h1>
+    <hr>
+    <div class="col-12 mt-3 px-0 d-flex">
+        <div class="col-8 pl-0">
+            <h1 class="text-muted">&nbsp;</h1>
+        </div>
+      <div class="col-2 offset-2 pr-0">
+        <a href="{{action('SubjectsController@create')}}" class="btn btn-green mb-3 float-right"><i class="fas fa-plus"></i>&nbsp;&nbsp;Add Subject</a>
+      </div>
+    </div>
+    <div class="table-responsive">
+
+    <table class="table">
+<thead class="thead-dark">
     <th>Name</th>
     <th>School</th>
     <th>Key Stage</th>
@@ -17,15 +29,13 @@
         <td>{{$subject->school['name']}}</td>
         <td>{{$subject->keystage['name']}}</td>
         <td>{{$subject->year['name']}}</td>
-        <td><a href="{{action('SubjectsController@show', $subject->id)}}" class="btn btn-block btn-blue">Details</a></td>
+        <td class="text-right"><a href="{{action('SubjectsController@show', $subject->id)}}" class="btn btn-info"><i class="fas fa-edit"></i>  Details</a></td>
     </tr>
     @endforeach
 </tbody>
 </table>
+    </div>
 
-<div class="col-12 mt-3 px-0">
-    <a href="{{action('SubjectsController@create')}}" class="btn btn-green btn-block mb-3 mb-md-0"><i class="fas fa-plus"></i>&nbsp;&nbsp;Add New</a>
-</div>
 
 </div>
 @endsection

@@ -23,6 +23,7 @@ $darkorange:    darkorange !default;
 $white:         white !default;
 $light:         lightslategrey;
 $linen:         linen;
+$dark:          #464646;
 
 $colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -41,6 +42,7 @@ $colors: map-merge(
     "darkorange": $darkorange,
     "light":      $light,
     "linen":      $linen,
+    "dark":       $dark,
   ),
   $colors
 );
@@ -67,6 +69,7 @@ $theme-colors: map-merge(
     "cyan":       $cyan,
     "darkorange": $darkorange,
     "linen":      $linen,
+    "dark":       $dark,
   ),
   $theme-colors
 );
@@ -75,6 +78,6 @@ $theme-colors: map-merge(
 $navbar-brand-colour: #ffffff;
 $navbar-nav-link-font-color: #ffffff;
 $navbar-dark-color: rgba(255,255,255, .9) !default;
-$navbar-dark-hover-color: rgba(255,255,255 , 1) !default;
+$navbar-dark-hover-color: rgb(140, 238, 255) !default;
 
 
