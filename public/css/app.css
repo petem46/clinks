@@ -19358,6 +19358,10 @@ readers do not read off random characters that represent icons */
   vertical-align: middle !important;
 }
 
+.table td a:hover {
+  color: #38c7da !important;
+}
+
 footer a {
   color: white;
   text-decoration: none;

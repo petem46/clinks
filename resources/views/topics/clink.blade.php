@@ -20,7 +20,7 @@
                 <td>{{$clink->name}} </td>
                 {{-- <td>{{$clink->week}} </td> --}}
                 <td>
-                <a href="{{action('TopicsController@clink', ['id'=>$topic->id,'clinkid'=>$clink->id])}}" class="btn btn-green float-right">
+                <a href="{{action('TopicsController@clink', ['id'=>$topic->id,'clinkid'=>$clink->id])}}" class="btn btn-outline text-green float-right">
                     <i class="fas fa-plus"></i>&nbsp;&nbsp;Add Link
                 </a>
                 </td>

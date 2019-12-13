@@ -9,7 +9,7 @@
             <h1 class="text-muted">&nbsp;</h1>
         </div>
       <div class="col-2 offset-2 pr-0">
-        <a href="{{action('SubjectsController@create')}}" class="btn btn-green mb-3 float-right"><i class="fas fa-plus"></i>&nbsp;&nbsp;Add Subject</a>
+        <a href="{{action('SubjectsController@create')}}" class="btn btn-outline text-green mb-3 float-right"><i class="fas fa-plus"></i>&nbsp;&nbsp;Add Subject</a>
       </div>
     </div>
     <div class="table-responsive">
@@ -25,11 +25,11 @@
 <tbody>
     @foreach ($subjects as $subject)
     <tr>
-        <td>{{$subject->name}}</td>
+        <td class="pl-0"><a href="{{action('SubjectsController@show', $subject->id)}}" class="btn btn-outline text-dark">{{$subject->name}}</a></td>
         <td>{{$subject->school['name']}}</td>
         <td>{{$subject->keystage['name']}}</td>
         <td>{{$subject->year['name']}}</td>
-        <td class="text-right"><a href="{{action('SubjectsController@show', $subject->id)}}" class="btn btn-info"><i class="fas fa-edit"></i>  Details</a></td>
+        <td class="text-right"><a href="{{action('SubjectsController@show', $subject->id)}}" class="btn btn-outline text-info"><i class="fas fa-search"></i>  View Topics</a></td>
     </tr>
     @endforeach
 </tbody>
