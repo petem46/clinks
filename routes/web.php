@@ -17,11 +17,21 @@
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home')->middleware('web');
 Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware' => ['auth']], function () {
 
-Route::resource('subjects', 'SubjectsController');
-Route::resource('topics', 'TopicsController');
-Route::get('/topics/link/{id}', 'TopicsController@link');
-Route::get('/topics/clink/{id}/{clinkid}', 'TopicsController@clink');
+    Route::put('/topics/{id}', 'TopicsController@storetopic');
+
+
+    Route::get('/topics/link/{id}', 'TopicsController@link');
+    Route::get('/topics/clink/{id}/{clinkid}', 'TopicsController@clink');
+    Route::get('/topics/declink/{id}/{clinkid}', 'TopicsController@declink');
+    Route::get('/topics/declinked{clinkid}/{id}', 'TopicsController@declinked');
+
+
+    Route::resource('subjects', 'SubjectsController');
+    Route::resource('topics', 'TopicsController');
+
+});
 

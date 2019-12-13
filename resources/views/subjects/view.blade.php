@@ -39,12 +39,15 @@
                     <td>
                         @if (!$topic->clink->isEmpty())
                         @foreach ($topic->clink as $clink)
-                            <a href="{{action('TopicsController@show', $clink->id)}}">{{$clink->name}} <small class="text-muted">{{$clink->subject['name']}} {{$clink->subject['year']['name']}}</small></a>
+                            <a href="{{action('TopicsController@show', $clink->id)}}">{{$clink->name}}</a> <a href="{{action('SubjectsController@show', $clink->subject['id'])}}"><small class="text-muted">{{$clink->subject['name']}} {{$clink->subject['year']['name']}}</small></a>
+                            <a href="{{action('TopicsController@declink', ['id'=>$topic->id,'clinkid'=>$clink->id])}}" class="text-red">X</a>
+                            <br>
                         @endforeach
                         @endif
                         @if (!$topic->clinked->isEmpty())
                         @foreach ($topic->clinked as $clink)
-                            <a href="{{action('TopicsController@show', $clink->id)}}">{{$clink->name}} <small class="text-muted">{{$clink->subject['name']}} {{$clink->subject['year']['name']}}</small></a>
+                            <a href="{{action('TopicsController@show', $clink->id)}}">{{$clink->name}}</a> <a href="{{action('SubjectsController@show', $clink->subject['id'])}}"><small class="text-muted">{{$clink->subject['name']}} {{$clink->subject['year']['name']}}</small></a>
+                            <a href="{{action('TopicsController@declinked', ['id'=>$topic->id,'clinkid'=>$clink->id])}}" class="text-red">dX</a>
                         @endforeach
                         @endif
                     </td>

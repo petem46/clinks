@@ -48,6 +48,19 @@ class TopicsController extends Controller
 
     }
 
+    public function storetopic(Request $request, $id)
+    {
+        $topic = Topic::create([
+            'name' => 'topic name',
+            'subject_id' => '1',
+            'week' => '1',
+            'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, nulla atque repellendus sapiente distinctio quos iure, repellat delectus, unde aliquid accusamus tempore aperiam! Aliquam, dolorum.',
+        ]);
+        dd($topic);
+        return redirect('/subjects/'.$request->subject_id)->with('success','Topic Added Successfully');
+
+    }
+
     public function show($id)
     {
         $data = [
@@ -78,6 +91,23 @@ class TopicsController extends Controller
         $topic->clink()->attach($clinkid);
 
         return redirect('/subjects/'. $topic->subject_id);
+
+    }
+
+    public function declink($id, $clinkid)
+    {
+        $topic = Topic::find($id);
+        $topic->clink()->detach($clinkid);
+        return redirect('/subjects/'. $topic->subject_id);
+
+    }
+
+    public function declinked($clinkid, $id)
+    {
+        $topic = Topic::find($clinkid);
+        $topic->clink()->detach($id);
+        $subject = Topic::select('subject_id')->find($id);
+        return redirect('/subjects/'. $subject->subject_id);
 
     }
 
