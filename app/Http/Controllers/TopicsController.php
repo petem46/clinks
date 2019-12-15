@@ -43,6 +43,7 @@ class TopicsController extends Controller
             'name' => $request->name,
             'subject_id' => $request->subject_id,
             'week' => $request->week,
+            'halfterm' => $request->halfterm,
             'description' => $request->description,
         ]);
 

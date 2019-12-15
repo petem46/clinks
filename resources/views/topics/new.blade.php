@@ -26,7 +26,8 @@
         <div class="form-group row m-3">
             <label for="week" class="col-sm-2 col-form-label">Subject</label>
             <div class="col-sm-10">
-                <select id="week" name="week" class="form-control">
+                <input type="number" name="week" id="week" min="1" max="39">
+                {{-- <select id="week" name="week" class="form-control">
                     <option selected>Choose Week ...</option>
                     <option value="1">Week 1 </option>
                     <option value="2">Week 2 </option>
@@ -40,7 +41,29 @@
                     <option value="10">Week 10 </option>
                     <option value="11">Week 11</option>
                     <option value="12">Week 12</option>
-                </select>
+                </select> --}}
+            </div>
+        </div>
+        <div class="form-group row m-3">
+            <label for="halfterm" class="col-sm-2 col-form-label">Subject</label>
+            <div class="col-sm-10">
+                <input type="number" name="halfterm" id="halfterm" min="1" max="6">
+{{--
+                <select id="halfterm" name="halfterm" class="form-control">
+                    <option selected>Choose Week ...</option>
+                    <option value="1">Week 1 </option>
+                    <option value="2">Week 2 </option>
+                    <option value="3">Week 3 </option>
+                    <option value="4">Week 4 </option>
+                    <option value="5">Week 5 </option>
+                    <option value="6">Week 6 </option>
+                    <option value="7">Week 7 </option>
+                    <option value="8">Week 8 </option>
+                    <option value="9">Week 9 </option>
+                    <option value="10">Week 10 </option>
+                    <option value="11">Week 11</option>
+                    <option value="12">Week 12</option>
+                </select> --}}
             </div>
         </div>
         <div class="form-group row m-3">
