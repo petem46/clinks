@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="subjects container">
-        <h6 class="text-muted">Small heading </h6>
+    <h6 class="text-muted">{{Auth::user()->name}} <small>{{Auth::user()->school['name']}} </small></h6>
         <h1 class="display-4">Add Subject</h1>
     <hr>
   <div class="row">

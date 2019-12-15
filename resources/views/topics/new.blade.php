@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="topics container">
-        <h6 class="text-muted">Small heading </h6>
+        <h6 class="text-muted">{{Auth::user()->name}} <small>{{Auth::user()->school['name']}} </small></h6>
         <h1 class="display-4">Add Topic</h1>
     <hr>
     <div class="row">
@@ -26,7 +26,7 @@
         <div class="form-group row m-3">
             <label for="week" class="col-sm-2 col-form-label">Subject</label>
             <div class="col-sm-10">
-                <input type="number" name="week" id="week" min="1" max="39">
+                <input type="number" id="week" name="week" class="form-control" min="1" max="39">
                 {{-- <select id="week" name="week" class="form-control">
                     <option selected>Choose Week ...</option>
                     <option value="1">Week 1 </option>
@@ -47,7 +47,7 @@
         <div class="form-group row m-3">
             <label for="halfterm" class="col-sm-2 col-form-label">Subject</label>
             <div class="col-sm-10">
-                <input type="number" name="halfterm" id="halfterm" min="1" max="6">
+                <input type="number" id="halfterm" name="halfterm" class="form-control" min="1" max="6">
 {{--
                 <select id="halfterm" name="halfterm" class="form-control">
                     <option selected>Choose Week ...</option>
