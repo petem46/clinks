@@ -69,7 +69,7 @@
         <div class="form-group row m-3">
             <label for="description" class="col-sm-2 col-form-label">Topic Content</label>
             <div class="col-sm-10">
-                <textarea name="description" rows=10 class="form-control" id="description" placeholder="Details of topic content"></textarea>
+                <textarea name="description" rows=10 class="form-control" id="description" placeholder="Details of topic content">Details of topic content</textarea>
             </div>
         </div>
 
