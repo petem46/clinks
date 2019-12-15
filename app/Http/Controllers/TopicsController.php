@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Topic;
 use App\Clink;
+use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Http\Request;
 
 class TopicsController extends Controller
@@ -74,11 +76,12 @@ class TopicsController extends Controller
     {
         $topic = Topic::with('subject')->find($id);
         $ksid = $topic->subject['keystage_id'];
+        $school_id = Auth::user()->school_id;
         $subjectid = $topic->subject_id;
         $data = [
             'topic' => Topic::with('subject')->find($id),
-            'clinks' => Topic::with('subject')->whereHas('Subject', function($q) use($ksid){
-                $q->where('keystage_id',"=",$ksid);
+            'clinks' => Topic::with('subject')->whereHas('Subject', function($q) use($ksid, $school_id){
+                $q->where('keystage_id',"=",$ksid)->where('school_id', "=", $school_id);
             })->where('subject_id', "!=", $subjectid)->orderBy('subject_id')->get(),
         ];
         // dd($data);

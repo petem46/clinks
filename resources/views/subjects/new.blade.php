@@ -15,7 +15,7 @@
                 <input type="text" name="name" class="form-control" id="name" placeholder="Subject Name">
             </div>
         </div>
-        <div class="form-group row m-3">
+        {{-- <div class="form-group row m-3">
             <label for="school_id" class="col-sm-2 col-form-label">School</label>
             <div class="col-sm-10">
                 <select id="school_id" name="school_id" class="form-control">
@@ -25,7 +25,7 @@
                     @endforeach
                 </select>
             </div>
-        </div>
+        </div> --}}
         <div class="form-group row m-3">
             <label for="keystage_id" class="col-sm-2 col-form-label">Key Stage</label>
             <div class="col-sm-10">

@@ -20,7 +20,7 @@ class SubjectsController extends Controller
     public function index()
     {
         $data = [
-            'subjects' => Subject::orderBy('name')->get(),
+            'subjects' => Subject::where('school_id', Auth::user()->school_id)->orderBy('name')->get(),
         ];
         // dd($data);
         return view('subjects.index', $data);
@@ -50,7 +50,8 @@ class SubjectsController extends Controller
 
         $subject = Subject::create([
             'name' => $request->name,
-            'school_id' => $request->school_id,
+            // 'school_id' => $request->school_id,
+            'school_id' => Auth::user()->school_id,
             'year_id' => $request->year_id,
             'keystage_id' => $request->keystage_id,
         ]);

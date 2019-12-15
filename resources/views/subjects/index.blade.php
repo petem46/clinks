@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="indexsubjects container">
-    <h6 class="text-muted">Small heading </h6>
+    <h6 class="text-muted">{{Auth::user()->name}} <small>{{Auth::user()->school['name']}} </small></h6>
     <h1 class="display-4">Subject List</h1>
     <hr>
     <div class="col-12 mt-3 px-0 d-flex">

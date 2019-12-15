@@ -2,10 +2,6 @@
 
 namespace App;
 
-use App\Keystage;
-use App\School;
-use App\Topic;
-use App\Year;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Auth;
