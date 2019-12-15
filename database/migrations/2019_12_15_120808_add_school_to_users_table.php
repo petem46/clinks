@@ -14,7 +14,7 @@ class AddSchoolToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->integer('school_id');
+            $table->integer('school_id')->nullable();
         });
     }
 
