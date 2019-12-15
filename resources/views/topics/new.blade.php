@@ -24,7 +24,7 @@
             </div>
         </div>
         <div class="form-group row m-3">
-            <label for="week" class="col-sm-2 col-form-label">Subject</label>
+            <label for="week" class="col-sm-2 col-form-label">Week</label>
             <div class="col-sm-10">
                 <input type="number" id="week" name="week" class="form-control" min="1" max="39">
                 {{-- <select id="week" name="week" class="form-control">
@@ -45,7 +45,7 @@
             </div>
         </div>
         <div class="form-group row m-3">
-            <label for="halfterm" class="col-sm-2 col-form-label">Subject</label>
+            <label for="halfterm" class="col-sm-2 col-form-label">Half Term</label>
             <div class="col-sm-10">
                 <input type="number" id="halfterm" name="halfterm" class="form-control" min="1" max="6">
 {{--
