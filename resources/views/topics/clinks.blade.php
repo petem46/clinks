@@ -4,7 +4,7 @@
     <h6 class="text-muted">{{Auth::user()->name}} <small>{{Auth::user()->school['name']}} (Log Out)</small></h6>
     <div class="col-12 mt-3 px-0 d-flex">
         <div class="col-8 pl-0">
-            <h1 class="display-4">Linked Topics</h1>
+            <h1 class="display-4"><i class="fas fa-fw fa-project-diagram"></i>&nbsp;&nbsp;Linked Topics</h1>
         </div>
         <div class="col-2 offset-2 pr-0 d-none">
             <a href="{{action('TopicsController@create')}}" class="btn btn-lg btn-outline text-green mb-0 get-down-right"><i class="fas fa-plus"></i>&nbsp;&nbsp;Add Topic</a>
