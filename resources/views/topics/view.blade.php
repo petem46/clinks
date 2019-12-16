@@ -11,10 +11,10 @@
     <h6 class="text-muted"><a href="{{action('SubjectsController@show', $topic->subject['id'])}}">{{$topic->subject['name']}}</a><small> {{$topic->year['name']}} {{$topic->term['termname']}} </small></h6>
     <div class="col-12 mt-3 px-0 d-flex">
         <div class="col-8 pl-0">
-            <h1 class="display-4">{{$topic->name}}</h1>
+            <h1 class="display-4"><i class="fas fa-fw fa-chalkboard-teacher"></i>&nbsp;&nbsp;{{$topic->name}}</h1>
             <div class="pl-0">
                 @foreach ($topic->school as $school)
-                <span class="text-muted">{{$school->name ?? ''}} </span> &nbsp;&nbsp;
+                {{-- <span class="text-muted">{{$school->name ?? ''}} </span> &nbsp;&nbsp; --}}
                 @endforeach
             </div>
         </div>
@@ -26,7 +26,7 @@
     <div class="row d-flex">
     <div class="col-12 mt-3">
         <div class="pl-0">
-            <h1 class="">Details</h1>
+            <h1 class=""><i class="far fa-fw fa-file-alt"></i>&nbsp;&nbsp;Details</h1>
         </div>
         <div class="pl-0 text-justify">
             <p>{{$topic->description}} </p>
@@ -57,7 +57,7 @@
     @else
     <div class="table-responsive">
         <table class="table table-hover">
-            <thead class="thead-dark">
+            <thead class="bg-primary text-white">
                 <th class="pl-3">Subject</th>
                 <th class="pl-3">Topic</th>
                 <th></th>
@@ -65,8 +65,8 @@
             <tbody>
                 @foreach ($topic->clink as $clink)
                 <tr>
-                    <td class="pl-0"><a href="{{action('SubjectsController@show', $clink->subject_id)}}" class="btn btn-outline text-dark">{{$clink->subject['name']}}</a></td>
-                    <td class="pl-0"><a href="{{action('TopicsController@show', $clink->id)}}" class="btn btn-outline text-dark">{{$clink->name}}</a>   <small class="text-muted"> {{$clink->year['name']}} {{$clink->term['termname']}} </small></td>
+                    <td class="pl-0"><a href="{{action('SubjectsController@show', $clink->subject_id)}}" class="btn btn-outline text-dark"><i class="fas fa-fw fa-angle-double-right"></i>&nbsp;&nbsp;{{$clink->subject['name']}}</a></td>
+                    <td class="pl-0"><a href="{{action('TopicsController@show', $clink->id)}}" class="btn btn-outline text-dark"><i class="fas fa-fw fa-angle-double-right"></i>&nbsp;&nbsp;{{$clink->name}}</a>   <small class="text-muted"> {{$clink->year['name']}} {{$clink->term['termname']}} </small></td>
                     <td class="text-right pr-0">
                         <a href="{{action('TopicsController@declinked', ['id'=>$topic->id,'clinkid'=>$clink->id])}}" class="btn btn-outline text-red"><i class="fas fa-trash"></i>  Delete Link</a>
                     </td>
@@ -74,8 +74,8 @@
                 @endforeach
                 @foreach ($topic->clinked as $clink)
                 <tr>
-                    <td class="pl-0"><a href="{{action('SubjectsController@show', $clink->subject_id)}}" class="btn btn-outline text-dark">{{$clink->subject['name']}}</a></td>
-                    <td class="pl-0"><a href="{{action('TopicsController@show', $clink->id)}}" class="btn btn-outline text-dark">{{$clink->name}}</a>   <small class="text-muted"> {{$clink->year['name']}} {{$clink->term['termname']}} </small></td>
+                    <td class="pl-0"><a href="{{action('SubjectsController@show', $clink->subject_id)}}" class="btn btn-outline text-dark"><i class="fas fa-fw fa-angle-double-right"></i>&nbsp;&nbsp;{{$clink->subject['name']}}</a></td>
+                    <td class="pl-0"><a href="{{action('TopicsController@show', $clink->id)}}" class="btn btn-outline text-dark"><i class="fas fa-fw fa-angle-double-right"></i>&nbsp;&nbsp;{{$clink->name}}</a>   <small class="text-muted"> {{$clink->year['name']}} {{$clink->term['termname']}} </small></td>
                     <td class="text-right pr-0">
                         <a href="{{action('TopicsController@declinked', ['id'=>$topic->id,'clinkid'=>$clink->id])}}" class="btn btn-outline text-red"><i class="fas fa-trash"></i>  Delete Link</a>
                     </td>

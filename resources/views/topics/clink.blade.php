@@ -5,7 +5,7 @@
     <h1 class="display-4">Create a Link</h1>
     <div class="table-responsive">
     <table class="table">
-        <thead class="thead-dark">
+        <thead class="bg-primary text-white">
             <th>Subject</th>
             <th>Topic</th>
             {{-- <th>Week</th> --}}

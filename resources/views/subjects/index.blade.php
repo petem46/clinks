@@ -7,22 +7,21 @@
             <h1 class="display-4">All Subjects</h1>
         </div>
         <div class="col-2 offset-2 pr-0">
-            <a href="{{action('SubjectsController@create')}}" class="btn btn-outline text-green mb-0 get-down-right"><i class="fas fa-plus"></i>&nbsp;&nbsp;Add Subject</a>
+            <a href="{{action('SubjectsController@create')}}" class="btn btn-lg btn-outline text-green mb-0 get-down-right"><i class="fas fa-plus"></i>&nbsp;&nbsp;Add Subject</a>
         </div>
     </div>
-    <hr>
     <div class="table-responsive">
 
-    <table class="table">
-<thead class="thead-dark">
-    <th>Name</th>
-    <th class="actions"></th>
-</thead>
-<tbody>
+    <table class="table table-hover">
+    <thead class="bg-primary text-white">
+        <th><i class="fa-fw fas fa-blank"></i>&nbsp;&nbsp;Name</th>
+        <th></th>
+    </thead>
+    <tbody>
     @foreach ($subjects as $subject)
     <tr>
-        <td class="pl-0"><a href="{{action('SubjectsController@show', $subject->id)}}" class="btn btn-outline text-dark">{{$subject->name}}</a></td>
-        <td class="text-right"><a href="{{action('SubjectsController@show', $subject->id)}}" class="btn btn-outline text-info"><i class="fas fa-search"></i>  View Topics</a></td>
+        <td class="pl-0"><a href="{{action('SubjectsController@show', $subject->id)}}" class="btn btn-outline text-dark"><i class="fas fa-fw fa-angle-double-right"></i>&nbsp;&nbsp;{{$subject->name}}</a></td>
+        <td class="text-right"><a href="{{action('SubjectsController@show', $subject->id)}}" class="btn btn-outline text-info">{{count($subject->topic)}} Topics&nbsp;&nbsp;<i class="fas fa-fw fa-angle-double-right"></i></a></td>
     </tr>
     @endforeach
 </tbody>

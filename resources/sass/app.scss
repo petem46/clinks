@@ -15,6 +15,22 @@
 
 @import 'checkboxes';
 
+@media (min-width: 1200px) {
+    .container-xl, .container-lg, .container-md, .container-sm, .container {
+        max-width: 85%;
+    }
+}
+
+.table-hover tbody tr:hover {
+    color: #212529;
+    background-color: navajowhite;
+}
+
+.table thead td {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
 .table td {
     vertical-align: middle !important;
 }

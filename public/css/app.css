@@ -25,6 +25,8 @@
   --light: lightslategrey;
   --linen: linen;
   --dark: #464646;
+  --gold: gold;
+  --navajowhite: navajowhite;
   --primary: #00615A;
   --secondary: #6c757d;
   --success: #009D92;
@@ -45,6 +47,8 @@
   --cyan: #6cb2eb;
   --darkorange: darkorange;
   --linen: linen;
+  --gold: gold;
+  --navajowhite: navajowhite;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
@@ -2489,6 +2493,50 @@ pre code {
   background-color: #fbeee2;
 }
 
+.table-gold,
+.table-gold > th,
+.table-gold > td {
+  background-color: #fff4b8;
+}
+
+.table-gold th,
+.table-gold td,
+.table-gold thead th,
+.table-gold tbody + tbody {
+  border-color: #ffea7a;
+}
+
+.table-hover .table-gold:hover {
+  background-color: #fff09f;
+}
+
+.table-hover .table-gold:hover > td,
+.table-hover .table-gold:hover > th {
+  background-color: #fff09f;
+}
+
+.table-navajowhite,
+.table-navajowhite > th,
+.table-navajowhite > td {
+  background-color: #fff6e8;
+}
+
+.table-navajowhite th,
+.table-navajowhite td,
+.table-navajowhite thead th,
+.table-navajowhite tbody + tbody {
+  border-color: #ffeed4;
+}
+
+.table-hover .table-navajowhite:hover {
+  background-color: #ffeccf;
+}
+
+.table-hover .table-navajowhite:hover > td,
+.table-hover .table-navajowhite:hover > th {
+  background-color: #ffeccf;
+}
+
 .table-active,
 .table-active > th,
 .table-active > td {
@@ -3994,6 +4042,88 @@ fieldset:disabled a.btn {
   box-shadow: 0 0 0 0.2rem rgba(217, 210, 202, 0.5);
 }
 
+.btn-gold {
+  color: #212529;
+  background-color: gold;
+  border-color: gold;
+}
+
+.btn-gold:hover {
+  color: #212529;
+  background-color: #d9b700;
+  border-color: #ccac00;
+}
+
+.btn-gold:focus,
+.btn-gold.focus {
+  color: #212529;
+  background-color: #d9b700;
+  border-color: #ccac00;
+  box-shadow: 0 0 0 0.2rem rgba(222, 188, 6, 0.5);
+}
+
+.btn-gold.disabled,
+.btn-gold:disabled {
+  color: #212529;
+  background-color: gold;
+  border-color: gold;
+}
+
+.btn-gold:not(:disabled):not(.disabled):active,
+.btn-gold:not(:disabled):not(.disabled).active,
+.show > .btn-gold.dropdown-toggle {
+  color: #212529;
+  background-color: #ccac00;
+  border-color: #bfa100;
+}
+
+.btn-gold:not(:disabled):not(.disabled):active:focus,
+.btn-gold:not(:disabled):not(.disabled).active:focus,
+.show > .btn-gold.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(222, 188, 6, 0.5);
+}
+
+.btn-navajowhite {
+  color: #212529;
+  background-color: navajowhite;
+  border-color: navajowhite;
+}
+
+.btn-navajowhite:hover {
+  color: #212529;
+  background-color: #ffcf87;
+  border-color: #ffc97a;
+}
+
+.btn-navajowhite:focus,
+.btn-navajowhite.focus {
+  color: #212529;
+  background-color: #ffcf87;
+  border-color: #ffc97a;
+  box-shadow: 0 0 0 0.2rem rgba(222, 194, 153, 0.5);
+}
+
+.btn-navajowhite.disabled,
+.btn-navajowhite:disabled {
+  color: #212529;
+  background-color: navajowhite;
+  border-color: navajowhite;
+}
+
+.btn-navajowhite:not(:disabled):not(.disabled):active,
+.btn-navajowhite:not(:disabled):not(.disabled).active,
+.show > .btn-navajowhite.dropdown-toggle {
+  color: #212529;
+  background-color: #ffc97a;
+  border-color: #ffc46d;
+}
+
+.btn-navajowhite:not(:disabled):not(.disabled):active:focus,
+.btn-navajowhite:not(:disabled):not(.disabled).active:focus,
+.show > .btn-navajowhite.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(222, 194, 153, 0.5);
+}
+
 .btn-outline-primary {
   color: #00615A;
   border-color: #00615A;
@@ -4712,6 +4842,78 @@ fieldset:disabled a.btn {
 .btn-outline-linen:not(:disabled):not(.disabled).active:focus,
 .show > .btn-outline-linen.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem rgba(250, 240, 230, 0.5);
+}
+
+.btn-outline-gold {
+  color: gold;
+  border-color: gold;
+}
+
+.btn-outline-gold:hover {
+  color: #212529;
+  background-color: gold;
+  border-color: gold;
+}
+
+.btn-outline-gold:focus,
+.btn-outline-gold.focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 215, 0, 0.5);
+}
+
+.btn-outline-gold.disabled,
+.btn-outline-gold:disabled {
+  color: gold;
+  background-color: transparent;
+}
+
+.btn-outline-gold:not(:disabled):not(.disabled):active,
+.btn-outline-gold:not(:disabled):not(.disabled).active,
+.show > .btn-outline-gold.dropdown-toggle {
+  color: #212529;
+  background-color: gold;
+  border-color: gold;
+}
+
+.btn-outline-gold:not(:disabled):not(.disabled):active:focus,
+.btn-outline-gold:not(:disabled):not(.disabled).active:focus,
+.show > .btn-outline-gold.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 215, 0, 0.5);
+}
+
+.btn-outline-navajowhite {
+  color: navajowhite;
+  border-color: navajowhite;
+}
+
+.btn-outline-navajowhite:hover {
+  color: #212529;
+  background-color: navajowhite;
+  border-color: navajowhite;
+}
+
+.btn-outline-navajowhite:focus,
+.btn-outline-navajowhite.focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 222, 173, 0.5);
+}
+
+.btn-outline-navajowhite.disabled,
+.btn-outline-navajowhite:disabled {
+  color: navajowhite;
+  background-color: transparent;
+}
+
+.btn-outline-navajowhite:not(:disabled):not(.disabled):active,
+.btn-outline-navajowhite:not(:disabled):not(.disabled).active,
+.show > .btn-outline-navajowhite.dropdown-toggle {
+  color: #212529;
+  background-color: navajowhite;
+  border-color: navajowhite;
+}
+
+.btn-outline-navajowhite:not(:disabled):not(.disabled):active:focus,
+.btn-outline-navajowhite:not(:disabled):not(.disabled).active:focus,
+.show > .btn-outline-navajowhite.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 222, 173, 0.5);
 }
 
 .btn-link {
@@ -7182,6 +7384,40 @@ a.badge-linen.focus {
   box-shadow: 0 0 0 0.2rem rgba(250, 240, 230, 0.5);
 }
 
+.badge-gold {
+  color: #212529;
+  background-color: gold;
+}
+
+a.badge-gold:hover,
+a.badge-gold:focus {
+  color: #212529;
+  background-color: #ccac00;
+}
+
+a.badge-gold:focus,
+a.badge-gold.focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(255, 215, 0, 0.5);
+}
+
+.badge-navajowhite {
+  color: #212529;
+  background-color: navajowhite;
+}
+
+a.badge-navajowhite:hover,
+a.badge-navajowhite:focus {
+  color: #212529;
+  background-color: #ffc97a;
+}
+
+a.badge-navajowhite:focus,
+a.badge-navajowhite.focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(255, 222, 173, 0.5);
+}
+
 .jumbotron {
   padding: 2rem 1rem;
   margin-bottom: 2rem;
@@ -7507,6 +7743,34 @@ a.badge-linen.focus {
 
 .alert-linen .alert-link {
   color: #676460;
+}
+
+.alert-gold {
+  color: #857000;
+  background-color: #fff7cc;
+  border-color: #fff4b8;
+}
+
+.alert-gold hr {
+  border-top-color: #fff09f;
+}
+
+.alert-gold .alert-link {
+  color: #524500;
+}
+
+.alert-navajowhite {
+  color: #85735a;
+  background-color: #fff8ef;
+  border-color: #fff6e8;
+}
+
+.alert-navajowhite hr {
+  border-top-color: #ffeccf;
+}
+
+.alert-navajowhite .alert-link {
+  color: #675945;
 }
 
 @-webkit-keyframes progress-bar-stripes {
@@ -8172,6 +8436,40 @@ a.badge-linen.focus {
   color: white;
   background-color: #827d78;
   border-color: #827d78;
+}
+
+.list-group-item-gold {
+  color: #857000;
+  background-color: #fff4b8;
+}
+
+.list-group-item-gold.list-group-item-action:hover,
+.list-group-item-gold.list-group-item-action:focus {
+  color: #857000;
+  background-color: #fff09f;
+}
+
+.list-group-item-gold.list-group-item-action.active {
+  color: white;
+  background-color: #857000;
+  border-color: #857000;
+}
+
+.list-group-item-navajowhite {
+  color: #85735a;
+  background-color: #fff6e8;
+}
+
+.list-group-item-navajowhite.list-group-item-action:hover,
+.list-group-item-navajowhite.list-group-item-action:focus {
+  color: #85735a;
+  background-color: #ffeccf;
+}
+
+.list-group-item-navajowhite.list-group-item-action.active {
+  color: white;
+  background-color: #85735a;
+  border-color: #85735a;
 }
 
 .close {
@@ -9316,6 +9614,28 @@ button.bg-linen:focus {
   background-color: #f2d7bc !important;
 }
 
+.bg-gold {
+  background-color: gold !important;
+}
+
+a.bg-gold:hover,
+a.bg-gold:focus,
+button.bg-gold:hover,
+button.bg-gold:focus {
+  background-color: #ccac00 !important;
+}
+
+.bg-navajowhite {
+  background-color: navajowhite !important;
+}
+
+a.bg-navajowhite:hover,
+a.bg-navajowhite:focus,
+button.bg-navajowhite:hover,
+button.bg-navajowhite:focus {
+  background-color: #ffc97a !important;
+}
+
 .bg-white {
   background-color: white !important;
 }
@@ -9442,6 +9762,14 @@ button.bg-linen:focus {
 
 .border-linen {
   border-color: linen !important;
+}
+
+.border-gold {
+  border-color: gold !important;
+}
+
+.border-navajowhite {
+  border-color: navajowhite !important;
 }
 
 .border-white {
@@ -13279,6 +13607,24 @@ a.text-darkorange:focus {
 a.text-linen:hover,
 a.text-linen:focus {
   color: #edcaa6 !important;
+}
+
+.text-gold {
+  color: gold !important;
+}
+
+a.text-gold:hover,
+a.text-gold:focus {
+  color: #b39700 !important;
+}
+
+.text-navajowhite {
+  color: navajowhite !important;
+}
+
+a.text-navajowhite:hover,
+a.text-navajowhite:focus {
+  color: #ffbf61 !important;
 }
 
 .text-body {
@@ -19482,6 +19828,26 @@ input[type=checkbox] {
 
 .defaultcheckedbutton input[type=checkbox] + label span#true {
   display: none;
+}
+
+@media (min-width: 1200px) {
+  .container-xl,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: 85%;
+  }
+}
+
+.table-hover tbody tr:hover {
+  color: #212529;
+  background-color: navajowhite;
+}
+
+.table thead td {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .table td {

@@ -1,7 +1,7 @@
-<nav class="navbar navbar-dark navbar-expand-lg bg-dark shadow-sm p-0">
+<nav class="navbar navbar-dark navbar-expand-lg bg-primary shadow-sm p-0">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
-            <i class="fas fa-code-branch fa-2x fa-fw"></i>  CurricuLinks
+            <i class="fab fa-hubspot fa-2x fa-fw"></i>  CurricuLinks
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>

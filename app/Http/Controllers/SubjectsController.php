@@ -74,8 +74,8 @@ class SubjectsController extends Controller
             'topics' => Topic::with('clink')
                         ->with('school')
                         ->where('subject_id', $id)
-                        ->orderBy('term_id', 'asc')
                         ->orderBy('year_id', 'asc')
+                        ->orderBy('term_id', 'asc')
                         ->get(),
         ];
         // dd($data);

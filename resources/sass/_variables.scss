@@ -24,6 +24,8 @@ $white:         white !default;
 $light:         lightslategrey;
 $linen:         linen;
 $dark:          #464646;
+$gold:          gold;
+$navajowhite:   navajowhite;
 
 $colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -43,6 +45,8 @@ $colors: map-merge(
     "light":      $light,
     "linen":      $linen,
     "dark":       $dark,
+    "gold":       $gold,
+    "navajowhite":$navajowhite,
   ),
   $colors
 );
@@ -70,6 +74,8 @@ $theme-colors: map-merge(
     "darkorange": $darkorange,
     "linen":      $linen,
     "dark":       $dark,
+    "gold":       $gold,
+    "navajowhite":$navajowhite,
   ),
   $theme-colors
 );

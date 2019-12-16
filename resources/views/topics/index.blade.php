@@ -7,16 +7,15 @@
             <h1 class="display-4">All Topics</h1>
         </div>
         <div class="col-2 offset-2 pr-0">
-            <a href="{{action('TopicsController@create')}}}}" class="btn btn-outline text-green mb-0 get-down-right"><i class="fas fa-plus"></i>&nbsp;&nbsp;Add Topic</a>
+            <a href="{{action('TopicsController@create')}}}}" class="btn btn-lg btn-outline text-green mb-0 get-down-right"><i class="fas fa-plus"></i>&nbsp;&nbsp;Add Topic</a>
         </div>
     </div>
-    <hr>
     <div class="table-responsive">
 
-    <table class="table">
-<thead class="thead-dark">
-    <th>Name</th>
-    <th>Subject</th>
+    <table class="table table-hover">
+<thead class="bg-primary text-white">
+    <th><i class="fa-fw fas fa-blank"></i>&nbsp;&nbsp;Name</th>
+    <th><i class="fa-fw fas fa-blank"></i>&nbsp;&nbsp;Subject</th>
     <th>Year</th>
     <th>Term</th>
     <th>Links</th>
@@ -24,9 +23,9 @@
 </thead>
 <tbody>
     @foreach ($topics as $topic)
-    <tr>
-        <td class="pl-0"><a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-outline text-dark">{{$topic->name}}</a></td>
-        <td class="pl-0"><a href="{{action('SubjectsController@show', $topic->subject_id)}}" class="btn btn-outline text-dark">{{$topic->subject['name']}}</a></td>
+    <tr @if (count($topic->clink) + count($topic->clinked) >= 1) class="bg-gold" @endif>
+        <td class="pl-0"><a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-outline text-dark"><i class="fas fa-fw fa-angle-double-right"></i>&nbsp;&nbsp;{{$topic->name}}</a></td>
+        <td class="pl-0"><a href="{{action('SubjectsController@show', $topic->subject_id)}}" class="btn btn-outline text-dark"><i class="fas fa-fw fa-angle-double-right"></i>&nbsp;&nbsp;{{$topic->subject['name']}}</a></td>
         <td>{{$topic->year['name']}} </td>
         <td>{{$topic->term['termname']}} </td>
         <td>
