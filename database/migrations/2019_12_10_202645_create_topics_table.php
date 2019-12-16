@@ -15,10 +15,12 @@ class CreateTopicsTable extends Migration
     {
         Schema::create('topics', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name', 250);
-            $table->integer('week');
-            $table->text('description');
-            $table->integer('subject_id');
+            $table->string('name', 250)->nullable();
+            $table->integer('year_id')->nullable();
+            $table->integer('term_id')->nullable();
+            $table->integer('week')->nullable();
+            $table->text('description')->nullable();
+            $table->integer('subject_id')->nullable();
             $table->timestamps();
             $table->softDeletes('deleted_at');
         });

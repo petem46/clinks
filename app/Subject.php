@@ -12,23 +12,23 @@ class Subject extends Model
 
     protected $fillable = [
       'name',
-      'school_id',
-      'year_id',
-      'keystage_id',
+      'intent',
     ];
 
     public function topic() {
         return $this->hasMany('App\Topic');
     }
 
-    public function keystage() {
-        return $this->belongsTo('App\Keystage');
-    }
+    // public function keystage() {
+    //     return $this->belongsTo('App\Keystage');
+    // }
+
     public function school() {
-        return $this->belongsTo('App\School');
+        return $this->belongsToMany('App\School');
     }
 
     public function year() {
-        return $this->belongsTo('App\Year');
+        return $this->belongsToMany('App\Year');
     }
+
 }

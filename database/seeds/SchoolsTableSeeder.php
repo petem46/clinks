@@ -35,6 +35,26 @@ class SchoolsTableSeeder extends Seeder
             'id' => 5,
            'name' => 'Unity',
          ),
+        array(
+            'id' => 6,
+           'name' => 'Gateway',
+         ),
+        array(
+            'id' => 7,
+           'name' => 'Hambleton',
+         ),
+        array(
+            'id' => 8,
+           'name' => 'Mereside',
+         ),
+        array(
+            'id' => 9,
+           'name' => 'Westcliff',
+         ),
+        array(
+            'id' => 10,
+           'name' => 'Westminster',
+         ),
        ));
        DB::unprepared('SET IDENTITY_INSERT schools OFF');
 

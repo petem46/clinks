@@ -22,7 +22,7 @@ Auth::routes();
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/', 'SubjectsController@index')->name('home');
 
-    Route::put('/topics/{id}', 'TopicsController@storetopic');
+    // Route::put('/topics/{id}', 'TopicsController@storetopic');
 
 
     Route::get('/topics/link/{id}', 'TopicsController@link');

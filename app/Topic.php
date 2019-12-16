@@ -14,8 +14,9 @@ class Topic extends Model
 
     protected $fillable = [
       'name',
+      'year_id',
+      'term_id',
       'week',
-      'halfterm',
       'description',
       'subject_id',
 
@@ -23,6 +24,18 @@ class Topic extends Model
 
     public function subject() {
         return $this->belongsTo('App\Subject');
+    }
+
+    public function school() {
+        return $this->belongsToMany('App\School');
+    }
+
+    public function year() {
+        return $this->belongsTo('App\Year');
+    }
+
+    public function term() {
+        return $this->belongsTo('App\Term');
     }
 
     public function clink() {

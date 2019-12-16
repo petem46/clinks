@@ -7,7 +7,6 @@
     <table class="table">
         <thead class="thead-dark">
             <th>Subject</th>
-            <th>Year</th>
             <th>Topic</th>
             {{-- <th>Week</th> --}}
             <th></th>
@@ -16,12 +15,11 @@
         @foreach ($clinks as $clink)
             <tr>
                 <td>{{$clink->subject['name']}} </td>
-                <td>{{$clink->subject['year']['name']}} </td>
                 <td>{{$clink->name}} </td>
                 {{-- <td>{{$clink->week}} </td> --}}
                 <td>
                 <a href="{{action('TopicsController@clink', ['id'=>$topic->id,'clinkid'=>$clink->id])}}" class="btn btn-outline text-green float-right">
-                    <i class="fas fa-plus"></i>&nbsp;&nbsp;Add Link
+                    <i class="fas fa-plus"></i>&nbsp;&nbsp;Create Link
                 </a>
                 </td>
             </tr>

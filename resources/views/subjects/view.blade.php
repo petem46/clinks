@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content')
 <div class="indexsubjects container">
-    <h6 class="text-muted">{{$subject->keystage['name']}} {{$subject->school['name']}} </h6>
-    <h1 class="display-4">{{$subject->name}} <small class="text-muted">{{$subject->year['name']}} </small></h1>
+    <h6 class="text-muted">&nbsp;&nbsp; </h6>
+    <h1 class="display-4">{{$subject->name}} <small class="text-muted"> &nbsp;&nbsp;</small></h1>
     <hr>
     <div class="row d-flex">
     <div class="col-12 mt-3">
@@ -26,22 +26,30 @@
     <div class="table-responsive">
         <table class="table table-hover">
             <thead class="thead-dark">
-                <th>Week</th>
                 <th>Topic</th>
+                <th>Year</th>
+                <th>Term</th>
+                {{-- <th>Schools</th> --}}
                 <th>Links</th>
                 <th class="text-right"></th>
             </thead>
             <tbody>
                 @foreach ($topics as $topic)
                 <tr>
-                    <td>Week {{$topic->week}} </td>
                     <td class="pl-0"><a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-outline text-dark">{{$topic->name}} </a></td>
+                    <td>{{$topic->year['name']}} </td>
+                    <td>{{$topic->term['termname']}} </td>
+                    {{-- <td>
+                        @foreach ($topic->school as $school)
+                            <small>{{$school['name']}}</small>
+                        @endforeach
+                    </td> --}}
                     <td class="pl-0">
                         @if (!$topic->clink->isEmpty())
                         @php $x=1; @endphp
                         @foreach ($topic->clink as $clink)
                         @php $x++ @endphp
-                            <a href="{{action('TopicsController@show', $clink->id)}}" class="btn btn-outline text-dark">{{$clink->name}}</a> <a href="{{action('SubjectsController@show', $clink->subject['id'])}}"><small class="text-muted">{{$clink->subject['name']}} {{$clink->subject['year']['name']}}</small></a>
+                            <a href="{{action('TopicsController@show', $clink->id)}}" class="btn btn-outline text-dark">{{$clink->name}}</a> <a href="{{action('SubjectsController@show', $clink->subject['id'])}}"><small class="text-muted">{{$clink->subject['name']}}</small></a>
                             <a href="{{action('TopicsController@declink', ['id'=>$topic->id,'clinkid'=>$clink->id])}}" class="btn btn-outline text-red">  <i class="fas fa-trash"></i></a>
                             @if ($x > 1) <br> @endif
                         @endforeach
@@ -50,7 +58,7 @@
                         @php $x=1; @endphp
                         @foreach ($topic->clinked as $clink)
                             @php $x++ @endphp
-                            <a href="{{action('TopicsController@show', $clink->id)}}" class="btn btn-outline text-dark">{{$clink->name}}</a> <a href="{{action('SubjectsController@show', $clink->subject['id'])}}"><small class="text-muted">{{$clink->subject['name']}} {{$clink->subject['year']['name']}}</small></a>
+                            <a href="{{action('TopicsController@show', $clink->id)}}" class="btn btn-outline text-dark">{{$clink->name}}</a> <a href="{{action('SubjectsController@show', $clink->subject['id'])}}"><small class="text-muted">{{$clink->subject['name']}}</small></a>
                             <a href="{{action('TopicsController@declinked', ['id'=>$topic->id,'clinkid'=>$clink->id])}}" class="btn btn-outline text-red">  <i class="fas fa-trash"></i></a>
                             @if ($x > 1) <br> @endif
                         @endforeach

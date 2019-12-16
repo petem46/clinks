@@ -20,7 +20,7 @@ class SubjectsController extends Controller
     public function index()
     {
         $data = [
-            'subjects' => Subject::where('school_id', Auth::user()->school_id)->orderBy('name')->get(),
+            'subjects' => Subject::orderBy('name')->get(),
         ];
         // dd($data);
         return view('subjects.index', $data);
@@ -69,10 +69,16 @@ class SubjectsController extends Controller
     public function show($id)
     {
         $data = [
-            'subject' => Subject::with('topic')->find($id),
-            'topics' => Topic::with('clink')->where('subject_id', $id)->orderBy('week', 'asc')->get(),
+            'subject' => Subject::with('topic')
+                        ->find($id),
+            'topics' => Topic::with('clink')
+                        ->with('school')
+                        ->where('subject_id', $id)
+                        ->orderBy('term_id', 'asc')
+                        ->orderBy('year_id', 'asc')
+                        ->get(),
         ];
-
+        // dd($data);
         session(['subject_id' => $id]);
         session(['subject_name' => Subject::select('name')->find($id)->name]);
 

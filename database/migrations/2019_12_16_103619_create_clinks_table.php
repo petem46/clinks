@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddIntentToSubjects extends Migration
+class CreateClinksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class AddIntentToSubjects extends Migration
      */
     public function up()
     {
-        Schema::table('subjects', function (Blueprint $table) {
-            $table->text('intent')->nullable();
+        Schema::create('clinks', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->integer('topic_id');
+            $table->integer('clink_id');
+            $table->timestamps();
+            $table->softDeletes('deleted_at');
         });
     }
 
@@ -25,8 +29,6 @@ class AddIntentToSubjects extends Migration
      */
     public function down()
     {
-        Schema::table('subjects', function (Blueprint $table) {
-            $table->dropColumn(['intent']);
-        });
+        Schema::dropIfExists('clinks');
     }
 }

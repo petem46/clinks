@@ -17,6 +17,7 @@ class CreateKeystagesTable extends Migration
             $table->bigIncrements('id');
             $table->string('name', 25);
             $table->timestamps();
+            $table->softDeletes('deleted_at');
         });
     }
 

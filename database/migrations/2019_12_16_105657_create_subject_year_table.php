@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddHalftermToTopicsTable extends Migration
+class CreateSubjectYearTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class AddHalftermToTopicsTable extends Migration
      */
     public function up()
     {
-        Schema::table('topics', function (Blueprint $table) {
-            $table->integer('halfterm')->nullable();
+        Schema::create('subject_year', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->integer('subject_id');
+            $table->integer('year_id');
+            $table->timestamps();
+            $table->softDeletes('deleted_at');
         });
     }
 
@@ -25,8 +29,6 @@ class AddHalftermToTopicsTable extends Migration
      */
     public function down()
     {
-        Schema::table('topics', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('subject_year');
     }
 }

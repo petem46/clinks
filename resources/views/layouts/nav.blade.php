@@ -39,7 +39,7 @@
                     <a class="nav-link text-center" href="{{url('/subjects')}}"><i class="fas fa-address-book fa-2x fa-fw"></i><br><span class="d-lg-none_">Subjects</a>
                 </li>
                 <li class="nav-item mr-3">
-                    <a class="nav-link text-center disabled" href="{{url('/')}}"><i class="fas fa-file-contract fa-2x fa-fw"></i><br><span class="d-lg-none_">Topics</a>
+                    <a class="nav-link text-center" href="{{url('/topics')}}"><i class="fas fa-file-contract fa-2x fa-fw"></i><br><span class="d-lg-none_">Topics</a>
                 </li>
                 <li class="nav-item mr-3">
                     <a class="nav-link text-center disabled"  href="{{url('/')}}"><i class="fas fa-user-lock fa-2x fa-fw"></i><br><span class="d-lg-none_">Users</span></a>

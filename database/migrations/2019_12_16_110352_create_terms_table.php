@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddSchoolToUsersTable extends Migration
+class CreateTermsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class AddSchoolToUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->integer('school_id')->nullable();
+        Schema::create('terms', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('termname', 25);
+            $table->timestamps();
+            $table->softDeletes('deleted_at');
         });
     }
 
@@ -25,8 +28,6 @@ class AddSchoolToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn(['school_id']);
-        });
+        Schema::dropIfExists('terms');
     }
 }

@@ -1,25 +1,25 @@
 @extends('layouts.app')
 @section('content')
 <div class="topics container">
-        <h6 class="text-muted">{{$subjectname}} </small></h6>
+        <h6 class="text-muted">{{$topic->subject['name']}} </small></h6>
         <h1 class="display-4">Add Topic</h1>
     <hr>
     <div class="row">
     <div class="col-md-12 mb-3">
-      <form action="/topics" method="POST" id="topicsnew" class="form-horizontal" enctype="multipart/form-data">
-        @method('POST')
+      <form action="{{action('TopicsController@update', $topic->id)}}" method="POST" id="topicedit" class="form-horizontal" enctype="multipart/form-data">
+        @method('PUT')
         {{ csrf_field() }}
         <div class="form-group row m-3">
             <label for="name" class="col-sm-2 col-form-label">Topic Title</label>
             <div class="col-sm-10">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Subject Name">
+                <input type="text" name="name" class="form-control" id="name" value="{{$topic->name}} ">
             </div>
         </div>
         <div class="form-group row m-3 d-none">
             <label for="subject_id" class="col-sm-2 col-form-label">Subject</label>
             <div class="col-sm-10">
                 <select id="subject_id" name="subject_id" class="form-control">
-                    <option value="{{$subjectid}}">{{$subjectname}} </option>
+                    <option value="{{$topic->subject_id}}">{{$topic->subject['name']}} </option>
                 </select>
             </div>
         </div>
@@ -27,9 +27,11 @@
             <label for="year_id" class="col-sm-2 col-form-label">Year Taught</label>
             <div class="col-sm-10">
                 <select id="year_id" name="year_id" class="form-control">
-                    <option selected>Choose Year ...</option>
                     @foreach ($years as $year)
-                      <option value="{{$year->id}} ">{{$year->name}} </option>
+                      <option
+                        @if ($topic->year_id == $year->id) selected @endif
+                        value="{{$year->id}} ">{{$year->name}}
+                      </option>
                     @endforeach
                 </select>
             </div>
@@ -38,9 +40,11 @@
             <label for="term_id" class="col-sm-2 col-form-label">Half Term</label>
             <div class="col-sm-10">
                 <select id="term_id" name="term_id" class="form-control">
-                    <option selected>Choose Term ...</option>
                     @foreach ($terms as $term)
-                      <option value="{{$term->id}} ">{{$term->termname}} </option>
+                      <option
+                        @if ($topic->term_id == $term->id) selected @endif
+                        value="{{$term->id}} ">{{$term->termname}}
+                      </option>
                     @endforeach
                 </select>
             </div>
@@ -49,10 +53,12 @@
             <label for="week" class="col-sm-2 col-form-label">Week</label>
             <div class="col-sm-10">
                 <select id="week" name="week" class="form-control">
-                    <option selected value=""></option>
                     @php $w = 1; @endphp
                     @while ($w < 40)
-                      <option value="{{$w}}">Week {{$w}} </option>
+                      <option
+                        @if ($topic->week == $w) selected @endif
+                        value="{{$w}}">Week {{$w}}
+                      </option>
                       @php $w++; @endphp
                     @endwhile
                 </select>
@@ -61,7 +67,7 @@
         <div class="form-group row m-3">
             <label for="description" class="col-sm-2 col-form-label">Topic Content</label>
             <div class="col-sm-10">
-                <textarea name="description" rows=10 class="form-control" id="description" placeholder="Details of topic content"></textarea>
+                <textarea name="description" rows=10 class="form-control" id="description" placeholder="Details of topic content">{{$topic->description ?? ''}} </textarea>
             </div>
         </div>
 
@@ -101,7 +107,7 @@
               <i class="fas fa-arrow-left"></i>&nbsp;&nbsp;Cancel
             </button>
             <button type="submit" class="col-12 col-md-5 offset-md-2 mb-3 mb-md-0 btn btn-success order-1 order-md-2">
-              <i class="fas fa-save"></i>&nbsp;&nbsp;Add Topic
+              <i class="fas fa-save"></i>&nbsp;&nbsp;Save Changes
             </button>
           </div>
         </div>

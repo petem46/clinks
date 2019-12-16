@@ -19354,8 +19354,143 @@ readers do not read off random characters that represent icons */
   font-family: "Font Awesome 5 Brands";
 }
 
+input[type=checkbox] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.checkbox {
+  vertical-align: middle;
+  height: 50px;
+}
+
+#checkboxbutton input[type=checkbox] {
+  display: none;
+}
+
+#checkboxbutton input[type=checkbox] + label {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  /* btn-color */
+  color: #95a5a6;
+  background-color: transparent;
+  background-image: none;
+  border-color: #95a5a6;
+  /* btn-sm */
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8203125rem;
+  line-height: 1.5;
+  border-radius: 0.2rem;
+  width: 100%;
+}
+
+#checkboxbutton input[type=checkbox]:checked + label {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  /* btn-color */
+  color: #fff;
+  background-color: #18BC9C;
+  border-color: #18BC9C;
+  /* btn-sm */
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8203125rem;
+  line-height: 1.5;
+  border-radius: 0.2rem;
+  width: 100%;
+}
+
+#compliantcheck input[type=checkbox] + label {
+  color: #fff;
+  background-color: #E74C3C;
+  border: 1px solid #E74C3C;
+}
+
+#compliantcheck input[type=checkbox]:checked + label span#false {
+  display: none;
+}
+
+#compliantcheck input[type=checkbox] + label span#false {
+  display: inherit;
+}
+
+#compliantcheck input[type=checkbox] + label span#true {
+  display: none;
+}
+
+#compliantcheck input[type=checkbox]:checked + label span#true {
+  display: inherit;
+}
+
+#sensitivecheck input[type=checkbox]:checked + label {
+  border: 1px solid darkorange;
+  background-color: darkorange;
+}
+
+#sensitivecheck input[type=checkbox]:checked + label span#false {
+  display: none;
+}
+
+#sensitivecheck input[type=checkbox] + label span#false {
+  display: block;
+}
+
+#sensitivecheck input[type=checkbox]:checked + label span#true {
+  display: block;
+  background-color: darkorange;
+}
+
+#sensitivecheck input[type=checkbox] + label span#true {
+  display: none;
+}
+
+.defaultcheckedbutton input[type=checkbox]:checked + label span#false {
+  display: none;
+}
+
+.defaultcheckedbutton input[type=checkbox] + label span#false {
+  display: block;
+}
+
+.defaultcheckedbutton input[type=checkbox]:checked + label span#true {
+  /*color: #E74C3C;*/
+  display: block;
+}
+
+.defaultcheckedbutton input[type=checkbox] + label span#true {
+  display: none;
+}
+
 .table td {
   vertical-align: middle !important;
+}
+
+.table td a:hover {
+  color: #38c7da !important;
+  font-weight: bold;
 }
 
 footer a {
@@ -19366,5 +19501,11 @@ footer a {
 footer a:hover {
   color: #8ceeff;
   text-decoration: none;
+}
+
+.get-down-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 

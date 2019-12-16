@@ -13,11 +13,14 @@
 
 // CUSTOM CSS
 
+@import 'checkboxes';
+
 .table td {
     vertical-align: middle !important;
 }
 .table td a:hover {
-    // color: rgb(56, 199, 218) !important;
+    color: rgb(56, 199, 218) !important;
+    font-weight: bold;
 }
 
 footer a {
@@ -27,4 +30,10 @@ footer a {
 footer a:hover {
     color: rgb(140, 238, 255);
     text-decoration: none;
+}
+
+.get-down-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }

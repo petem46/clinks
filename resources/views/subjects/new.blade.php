@@ -15,17 +15,6 @@
                 <input type="text" name="name" class="form-control" id="name" placeholder="Subject Name">
             </div>
         </div>
-        {{-- <div class="form-group row m-3">
-            <label for="school_id" class="col-sm-2 col-form-label">School</label>
-            <div class="col-sm-10">
-                <select id="school_id" name="school_id" class="form-control">
-                    <option selected>Choose...</option>
-                    @foreach ($schools as $school)
-                    <option value="{{$school->id}}">{{$school->name}} </option>
-                    @endforeach
-                </select>
-            </div>
-        </div> --}}
         <div class="form-group row m-3">
             <label for="keystage_id" class="col-sm-2 col-form-label">Key Stage</label>
             <div class="col-sm-10">
@@ -45,7 +34,6 @@
                     @foreach ($years as $year)
                     <option value="{{$year->id}}">{{$year->name}} </option>
                     @endforeach
-
                 </select>
             </div>
         </div>
