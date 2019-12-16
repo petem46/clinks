@@ -7,7 +7,7 @@
             <h1 class="display-4">All Topics</h1>
         </div>
         <div class="col-2 offset-2 pr-0">
-            <a href="{{action('TopicsController@create')}}}}" class="btn btn-lg btn-outline text-green mb-0 get-down-right"><i class="fas fa-plus"></i>&nbsp;&nbsp;Add Topic</a>
+            <a href="{{action('TopicsController@create')}}" class="btn btn-lg btn-outline text-green mb-0 get-down-right"><i class="fas fa-plus"></i>&nbsp;&nbsp;Add Topic</a>
         </div>
     </div>
     <div class="table-responsive">

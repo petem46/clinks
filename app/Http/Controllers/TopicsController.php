@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Clink;
 use App\School;
+use App\Subject;
 use App\Term;
 use App\Topic;
 use App\Year;
@@ -16,6 +17,9 @@ class TopicsController extends Controller
 
     public function index()
     {
+        session(['subject_id' => '']);
+        session(['subject_name' => '']);
+
         $data = [
             'topics' => Topic::with('term')
             ->with('school')
@@ -32,6 +36,9 @@ class TopicsController extends Controller
 
     public function clinks()
     {
+        session(['subject_id' => '']);
+        session(['subject_name' => '']);
+
         $data = [
             'topics' => Topic::with('term')
             ->with('school')
@@ -51,6 +58,7 @@ class TopicsController extends Controller
         $data = [
             'subjectid' => session('subject_id'),
             'subjectname' => session('subject_name'),
+            'subjects' => Subject::get(),
             'terms' => Term::get(),
             'years' => Year::get(),
             'schools' => School::orderby('name')->get(),
@@ -155,6 +163,7 @@ class TopicsController extends Controller
                     ->with('clink')
                     ->with('clinked')
                     ->find($id),
+            'subjects' => Subjects::get(),
             'terms' => Term::get(),
             'years' => Year::get(),
             'schools' => School::orderby('name')->get(),

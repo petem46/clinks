@@ -1,8 +1,21 @@
 @extends('layouts.app')
 @section('content')
 <div class="indexsubjects container">
-    <h6 class="text-muted">&nbsp;&nbsp; </h6>
-    <h1 class="display-4"><i class="fas fa-fw fa-chalkboard-teacher"></i>&nbsp;&nbsp;{{$subject->name}} <small class="text-muted"> &nbsp;&nbsp;</small></h1>
+    <h6 class="text-muted">foo </small></h6>
+    <div class="col-12 mt-3 px-0 d-flex">
+        <div class="col-8 pl-0">
+            <h1 class="display-4"><i class="fas fa-fw fa-chalkboard-teacher"></i>&nbsp;&nbsp;{{$subject->name}}</h1>
+            <div class="pl-0">
+                @if(count($subject->school) < 1) <span class="text-muted">bar</span>@endif
+                @foreach ($subject->school as $school)
+                <span class="text-muted">{{$school->name ?? ''}} </span> &nbsp;&nbsp;
+                @endforeach
+            </div>
+        </div>
+        <div class="col-2 offset-2 pr-0">
+            <a href="{{action('SubjectsController@edit', $subject->id)}}" class="btn btn-lg btn-outline text-blue mb-0 get-down-right"><i class="fas fa-edit"></i>&nbsp;&nbsp;Edit Subject</a>
+        </div>
+    </div>
     <hr>
     <div class="row d-flex">
     <div class="col-12 mt-3">
@@ -17,7 +30,7 @@
     <hr>
     <div class="col-12 my-3 px-0 d-flex">
         <div class="col-8 pl-0">
-            <h1 class=""><i class="fas fa-fw fa-list"></i>&nbsp;&nbsp;Topics</h1>
+            <h1><i class="fas fa-fw fa-list"></i>&nbsp;&nbsp;Topics</h1>
         </div>
         <div class="col-2 offset-2 pr-0">
             <a href="{{action('TopicsController@create')}}" class="btn btn-lg btn-outline text-green mb-3 float-right"><i class="fas fa-plus"></i>&nbsp;&nbsp;Add Topic</a>

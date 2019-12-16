@@ -10,17 +10,20 @@
         @method('POST')
         {{ csrf_field() }}
         <div class="form-group row m-3">
-            <label for="name" class="col-sm-2 col-form-label">Topic Title</label>
-            <div class="col-sm-10">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Subject Name">
-            </div>
-        </div>
-        <div class="form-group row m-3 d-none">
             <label for="subject_id" class="col-sm-2 col-form-label">Subject</label>
             <div class="col-sm-10">
                 <select id="subject_id" name="subject_id" class="form-control">
-                    <option value="{{$subjectid}}">{{$subjectname}} </option>
+                    @if($subjectid == '') <option selected value="">Choose Subject ... </option>@endif
+                    @foreach ($subjects as $subject)
+                        <option @if($subject->id == $subjectid) selected @endif value="{{$subject->id}}">{{$subject->name}} </option>
+                    @endforeach
                 </select>
+            </div>
+        </div>
+        <div class="form-group row m-3">
+            <label for="name" class="col-sm-2 col-form-label">Topic Title</label>
+            <div class="col-sm-10">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Subject Name">
             </div>
         </div>
         <div class="form-group row m-3">

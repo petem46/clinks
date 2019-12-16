@@ -1,12 +1,5 @@
 @extends('layouts.app')
 @section('content')
-{{--
-<pre>
-    @php
-        print_r($topic);
-    @endphp
-</pre> --}}
-
 <div class="indextopics container">
     <h6 class="text-muted"><a href="{{action('SubjectsController@show', $topic->subject['id'])}}">{{$topic->subject['name']}}</a><small> {{$topic->year['name']}} {{$topic->term['termname']}} </small></h6>
     <div class="col-12 mt-3 px-0 d-flex">
@@ -14,7 +7,7 @@
             <h1 class="display-4"><i class="fas fa-fw fa-chalkboard-teacher"></i>&nbsp;&nbsp;{{$topic->name}}</h1>
             <div class="pl-0">
                 @foreach ($topic->school as $school)
-                {{-- <span class="text-muted">{{$school->name ?? ''}} </span> &nbsp;&nbsp; --}}
+                <span class="text-muted">{{$school->name ?? ''}} </span> &nbsp;&nbsp;
                 @endforeach
             </div>
         </div>
@@ -36,7 +29,7 @@
     <hr>
     <div class="col-12 mt-3 px-0 d-flex">
         <div class="col-8 pl-0">
-            <h1 class="text-muted">Links</h1>
+            <h1><i class="fas fa-fw fa-link"></i>&nbsp;&nbsp;Links</h1>
         </div>
         <div class="col-2 offset-2 pr-0">
             <a href="{{action('TopicsController@link', $topic->id)}}" class="btn btn-outline text-green mb-3 float-right"><i class="fas fa-plus"></i>&nbsp;&nbsp;Add Link</a>
@@ -58,8 +51,8 @@
     <div class="table-responsive">
         <table class="table table-hover">
             <thead class="bg-primary text-white">
-                <th class="pl-3">Subject</th>
-                <th class="pl-3">Topic</th>
+                <th class="pl-3"><i class="fa-fw fas fa-blank"></i>&nbsp;&nbsp;Subject</th>
+                <th class="pl-3"><i class="fa-fw fas fa-blank"></i>&nbsp;&nbsp;Topic</th>
                 <th></th>
             </thead>
             <tbody>
