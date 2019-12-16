@@ -2,16 +2,15 @@
 @section('content')
 <div class="indexsubjects container">
     <h6 class="text-muted">{{Auth::user()->name}} <small>{{Auth::user()->school['name']}} (Log Out)</small></h6>
-    <h1 class="display-4">All Subjects</h1>
-    <hr>
     <div class="col-12 mt-3 px-0 d-flex">
         <div class="col-8 pl-0">
-            <h1 class="text-muted">Subject List&nbsp;</h1>
+            <h1 class="display-4">All Subjects</h1>
         </div>
-      <div class="col-2 offset-2 pr-0">
-        <a href="{{action('SubjectsController@create')}}" class="btn btn-outline text-green mb-3 float-right"><i class="fas fa-plus"></i>&nbsp;&nbsp;Add Subject</a>
-      </div>
+        <div class="col-2 offset-2 pr-0">
+            <a href="{{action('SubjectsController@create')}}" class="btn btn-outline text-green mb-0 get-down-right"><i class="fas fa-plus"></i>&nbsp;&nbsp;Add Subject</a>
+        </div>
     </div>
+    <hr>
     <div class="table-responsive">
 
     <table class="table">

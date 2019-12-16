@@ -30,6 +30,22 @@ class TopicsController extends Controller
 
     }
 
+    public function clinks()
+    {
+        $data = [
+            'topics' => Topic::with('term')
+            ->with('school')
+            ->with('subject')
+            ->with('clink')
+            ->with('clinked')
+            ->orderBy('name')
+            ->get(),
+        ];
+        // dd($data);
+        return view('topics.clinks', $data);
+
+    }
+
     public function create()
     {
         $data = [

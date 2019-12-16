@@ -30,16 +30,16 @@
                     <a class="nav-link" href="{{url('/breaches')}}"><i class="fas fa-user-lock"></i> Data Breaches</a>
                 </li> --}}
                 <li class="nav-item mr-3">
-                    <a class="nav-link text-center" href="{{url('/')}}"><i class="fas fa-th fa-2x fa-fw"></i><br><span class="d-lg-none_">Dashboard</a>
-                </li>
-                <li class="nav-item mr-3">
-                    <a class="nav-link text-center disabled" href="{{url('/')}}"><i class="fas fa-network-wired fa-2x fa-fw"></i><br><span class="d-lg-none_">Links</a>
+                    <a class="nav-link text-center disabled" href="{{url('/')}}"><i class="fas fa-th fa-2x fa-fw"></i><br><span class="d-lg-none_">Dashboard</a>
                 </li>
                 <li class="nav-item mr-3">
                     <a class="nav-link text-center" href="{{url('/subjects')}}"><i class="fas fa-address-book fa-2x fa-fw"></i><br><span class="d-lg-none_">Subjects</a>
                 </li>
                 <li class="nav-item mr-3">
                     <a class="nav-link text-center" href="{{url('/topics')}}"><i class="fas fa-file-contract fa-2x fa-fw"></i><br><span class="d-lg-none_">Topics</a>
+                </li>
+                <li class="nav-item mr-3">
+                    <a class="nav-link text-center" href="{{url('/topics/clinks')}}"><i class="fas fa-network-wired fa-2x fa-fw"></i><br><span class="d-lg-none_">Links</a>
                 </li>
                 <li class="nav-item mr-3">
                     <a class="nav-link text-center disabled"  href="{{url('/')}}"><i class="fas fa-user-lock fa-2x fa-fw"></i><br><span class="d-lg-none_">Users</span></a>

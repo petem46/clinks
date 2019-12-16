@@ -25,6 +25,7 @@ Route::group(['middleware' => ['auth']], function () {
     // Route::put('/topics/{id}', 'TopicsController@storetopic');
 
 
+    Route::get('/topics/clinks', 'TopicsController@clinks');
     Route::get('/topics/link/{id}', 'TopicsController@link');
     Route::get('/topics/clink/{id}/{clinkid}', 'TopicsController@clink');
     Route::get('/topics/declink/{id}/{clinkid}', 'TopicsController@declink');
