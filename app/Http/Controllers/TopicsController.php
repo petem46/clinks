@@ -163,7 +163,7 @@ class TopicsController extends Controller
                     ->with('clink')
                     ->with('clinked')
                     ->find($id),
-            'subjects' => Subjects::get(),
+            'subjects' => Subject::get(),
             'terms' => Term::get(),
             'years' => Year::get(),
             'schools' => School::orderby('name')->get(),

@@ -43,6 +43,28 @@
             </tr>
             @endif
             @endforeach
+            <tr>
+                <td colspan="8" class="bg-info"></td>
+            </tr>
+            @foreach ($topics as $topic)
+            @if (count($topic->clinked) == 0)
+            @else
+            <tr>
+                <td class="pl-0"><a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-outline text-dark"><i class="fas fa-fw fa-angle-double-right"></i>&nbsp;&nbsp;{{$topic->name}}</a></td>
+                <td class="pl-0"><a href="{{action('SubjectsController@show', $topic->subject_id)}}" class="btn btn-outline text-dark"><i class="fas fa-fw fa-angle-double-right"></i>&nbsp;&nbsp;{{$topic->subject['name']}}</a></td>
+                <td>{{$topic->year['name']}} </td>
+                <td>{{$topic->term['termname']}} </td>
+                @foreach ($topic->clinked as $clinked)
+
+                <td class="pl-0"><a href="{{action('TopicsController@show', $clinked->id)}}" class="btn btn-outline text-dark"><i class="fas fa-fw fa-angle-double-right"></i>&nbsp;&nbsp;{{$clinked->name}}</a></td>
+                <td class="pl-0"><a href="{{action('SubjectsController@show', $clinked->subject_id)}}" class="btn btn-outline text-dark"><i class="fas fa-fw fa-angle-double-right"></i>&nbsp;&nbsp;{{$clinked->subject['name']}}</a></td>
+                <td>{{$clinked->year['name']}} </td>
+                <td>{{$clinked->term['termname']}} </td>
+
+                @endforeach
+            </tr>
+            @endif
+            @endforeach
         </tbody>
         </table>
     </div>
