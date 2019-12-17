@@ -77,6 +77,41 @@ class SubjectsController extends Controller
                         ->orderBy('year_id', 'asc')
                         ->orderBy('term_id', 'asc')
                         ->get(),
+            'topicsy7' => Topic::with('clink')
+                        ->with('school')
+                        ->where('subject_id', $id)
+                        ->where('year_id', '7')
+                        ->orderBy('year_id', 'asc')
+                        ->orderBy('term_id', 'asc')
+                        ->get(),
+            'topicsy8' => Topic::with('clink')
+                        ->with('school')
+                        ->where('subject_id', $id)
+                        ->where('year_id', '8')
+                        ->orderBy('year_id', 'asc')
+                        ->orderBy('term_id', 'asc')
+                        ->get(),
+            'topicsy9' => Topic::with('clink')
+                        ->with('school')
+                        ->where('subject_id', $id)
+                        ->where('year_id', '9')
+                        ->orderBy('year_id', 'asc')
+                        ->orderBy('term_id', 'asc')
+                        ->get(),
+            'topicsy10' => Topic::with('clink')
+                        ->with('school')
+                        ->where('subject_id', $id)
+                        ->where('year_id', '10')
+                        ->orderBy('year_id', 'asc')
+                        ->orderBy('term_id', 'asc')
+                        ->get(),
+            'topicsy11' => Topic::with('clink')
+                        ->with('school')
+                        ->where('subject_id', $id)
+                        ->where('year_id', '11')
+                        ->orderBy('year_id', 'asc')
+                        ->orderBy('term_id', 'asc')
+                        ->get(),
         ];
         // dd($data);
         session(['subject_id' => $id]);

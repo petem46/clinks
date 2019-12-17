@@ -29,6 +29,227 @@
     </div>
     </div>
     <hr>
+<section id="schema">
+    <div class="col-12 my-3 px-0 d-flex">
+        <div class="col-8 pl-0">
+            <h1><i class="fas fa-fw fa-list"></i>&nbsp;&nbsp;Scheme of Work</h1>
+        </div>
+        <div class="col-2 offset-2 pr-0">
+            {{-- <a href="{{action('TopicsController@create')}}" class="btn btn-lg btn-outline text-green mb-3 float-right"><i class="fas fa-plus"></i>&nbsp;&nbsp;Add Topic</a> --}}
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-bordered table-schema">
+            <thead class="bg-primary text-white">
+                <th style="min-width: 100px;">Year</th>
+                <th>Autumn 1</th>
+                <th>Autumn 2</th>
+                <th>Spring 1</th>
+                <th>Spring 2</th>
+                <th>Summer 1</th>
+                <th>Summer 2</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="pr-3"><button class="btn btn-sm btn-outline text-dark text-left">Year 7</button></td>
+                    <td class="term">
+                    @foreach ($topicsy7 as $topic)
+                        @if ($topic->term['termname'] == 'Autumn Term 1') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> <br> <small>{{$topic->school['name'] ?? ''}} </small> @endif
+                        @if ($topic->term['termname'] == 'Autumn Term') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> @endif
+                    @endforeach
+                    </td>
+                    <td class="term">
+                    @foreach ($topicsy7 as $topic)
+                        @if ($topic->term['termname'] == 'Autumn Term 2') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> <br> <small>{{$topic->school['name'] ?? ''}} </small> @endif
+                        @if ($topic->term['termname'] == 'Autumn Term') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> @endif
+                    @endforeach
+                    </td>
+                    <td class="term">
+                    @foreach ($topicsy7 as $topic)
+                        @if ($topic->term['termname'] == 'Spring Term 1') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> <br> <small>{{$topic->school['name'] ?? ''}} </small> @endif
+                        @if ($topic->term['termname'] == 'Spring Term') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> @endif
+                    @endforeach
+                    </td>
+                    <td class="term">
+                    @foreach ($topicsy7 as $topic)
+                        @if ($topic->term['termname'] == 'Spring Term 2') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> <br> <small>{{$topic->school['name'] ?? ''}} </small> @endif
+                        @if ($topic->term['termname'] == 'Spring Term') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> @endif
+                    @endforeach
+                    </td>
+                    <td class="term">
+                    @foreach ($topicsy7 as $topic)
+                        @if ($topic->term['termname'] == 'Summer Term 1') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> <br> <small>{{$topic->school['name'] ?? ''}} </small> @endif
+                        @if ($topic->term['termname'] == 'Summer Term') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> @endif
+                    @endforeach
+                    </td>
+                    <td class="term">
+                    @foreach ($topicsy7 as $topic)
+                        @if ($topic->term['termname'] == 'Summer Term 2') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> <br> <small>{{$topic->school['name'] ?? ''}} </small> @endif
+                        @if ($topic->term['termname'] == 'Summer Term') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> @endif
+                    @endforeach
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pr-3"><button class="btn btn-sm btn-outline text-dark text-left">Year 8</button></td>
+                    <td class="term">
+                    @foreach ($topicsy8 as $topic)
+                        @if ($topic->term['termname'] == 'Autumn Term 1') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> <br> <small>{{$topic->school['name'] ?? ''}} </small> @endif
+                        @if ($topic->term['termname'] == 'Autumn Term') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> @endif
+                    @endforeach
+                    </td>
+                    <td class="term">
+                    @foreach ($topicsy8 as $topic)
+                        @if ($topic->term['termname'] == 'Autumn Term 2') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> <br> <small>{{$topic->school['name'] ?? ''}} </small> @endif
+                        @if ($topic->term['termname'] == 'Autumn Term') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> <br> <small>{{$topic->school['name'] ?? ''}} </small> @endif
+                    @endforeach
+                    </td>
+                    <td class="term">
+                    @foreach ($topicsy8 as $topic)
+                        @if ($topic->term['termname'] == 'Spring Term 1') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> <br> <small>{{$topic->school['name'] ?? ''}} </small> @endif
+                        @if ($topic->term['termname'] == 'Spring Term') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> @endif
+                    @endforeach
+                    </td>
+                    <td class="term">
+                    @foreach ($topicsy8 as $topic)
+                        @if ($topic->term['termname'] == 'Spring Term 2') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> <br> <small>{{$topic->school['name'] ?? ''}} </small> @endif
+                        @if ($topic->term['termname'] == 'Spring Term') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> <br> <small>{{$topic->school['name'] ?? ''}} </small> @endif
+                    @endforeach
+                    </td>
+                    <td class="term">
+                    @foreach ($topicsy8 as $topic)
+                        @if ($topic->term['termname'] == 'Summer Term 1') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> <br> <small>{{$topic->school['name'] ?? ''}} </small> @endif
+                        @if ($topic->term['termname'] == 'Summer Term') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> @endif
+                    @endforeach
+                    </td>
+                    <td class="term">
+                    @foreach ($topicsy8 as $topic)
+                        @if ($topic->term['termname'] == 'Summer Term 2') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> <br> <small>{{$topic->school['name'] ?? ''}} </small> @endif
+                        @if ($topic->term['termname'] == 'Summer Term') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> <br> <small>{{$topic->school['name'] ?? ''}} </small> @endif
+                    @endforeach
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pr-3"><button class="btn btn-sm btn-outline text-dark text-left">Year 9</button></td>
+                    <td class="term">
+                    @foreach ($topicsy9 as $topic)
+                        @if ($topic->term['termname'] == 'Autumn Term 1') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> <br> <small>{{$topic->school['name'] ?? ''}} </small> @endif
+                        @if ($topic->term['termname'] == 'Autumn Term') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> @endif
+                    @endforeach
+                    </td>
+                    <td class="term">
+                    @foreach ($topicsy9 as $topic)
+                        @if ($topic->term['termname'] == 'Autumn Term 2') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> <br> <small>{{$topic->school['name'] ?? ''}} </small> @endif
+                        @if ($topic->term['termname'] == 'Autumn Term') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> <br> <small>{{$topic->school['name'] ?? ''}} </small> @endif
+                    @endforeach
+                    </td>
+                    <td class="term">
+                    @foreach ($topicsy9 as $topic)
+                        @if ($topic->term['termname'] == 'Spring Term 1') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> <br> <small>{{$topic->school['name'] ?? ''}} </small> @endif
+                        @if ($topic->term['termname'] == 'Spring Term') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> @endif
+                    @endforeach
+                    </td>
+                    <td class="term">
+                    @foreach ($topicsy9 as $topic)
+                        @if ($topic->term['termname'] == 'Spring Term 2') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> <br> <small>{{$topic->school['name'] ?? ''}} </small> @endif
+                        @if ($topic->term['termname'] == 'Spring Term') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> <br> <small>{{$topic->school['name'] ?? ''}} </small> @endif
+                    @endforeach
+                    </td>
+                    <td class="term">
+                    @foreach ($topicsy9 as $topic)
+                        @if ($topic->term['termname'] == 'Summer Term 1') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> <br> <small>{{$topic->school['name'] ?? ''}} </small> @endif
+                        @if ($topic->term['termname'] == 'Summer Term') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> @endif
+                    @endforeach
+                    </td>
+                    <td class="term">
+                    @foreach ($topicsy9 as $topic)
+                        @if ($topic->term['termname'] == 'Summer Term 2') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> <br> <small>{{$topic->school['name'] ?? ''}} </small> @endif
+                        @if ($topic->term['termname'] == 'Summer Term') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> <br> <small>{{$topic->school['name'] ?? ''}} </small> @endif
+                    @endforeach
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pr-3"><button class="btn btn-sm btn-outline text-dark text-left">Year 10</button></td>
+                    <td class="term">
+                    @foreach ($topicsy10 as $topic)
+                        @if ($topic->term['termname'] == 'Autumn Term 1') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> <br> <small>{{$topic->school['name'] ?? ''}} </small> @endif
+                        @if ($topic->term['termname'] == 'Autumn Term') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> @endif
+                    @endforeach
+                    </td>
+                    <td class="term">
+                    @foreach ($topicsy10 as $topic)
+                        @if ($topic->term['termname'] == 'Autumn Term 2') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> <br> <small>{{$topic->school['name'] ?? ''}} </small> @endif
+                        @if ($topic->term['termname'] == 'Autumn Term') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> <br> <small>{{$topic->school['name'] ?? ''}} </small> @endif
+                    @endforeach
+                    </td>
+                    <td class="term">
+                    @foreach ($topicsy10 as $topic)
+                        @if ($topic->term['termname'] == 'Spring Term 1') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> <br> <small>{{$topic->school['name'] ?? ''}} </small> @endif
+                        @if ($topic->term['termname'] == 'Spring Term') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> @endif
+                    @endforeach
+                    </td>
+                    <td class="term">
+                    @foreach ($topicsy10 as $topic)
+                        @if ($topic->term['termname'] == 'Spring Term 2') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> <br> <small>{{$topic->school['name'] ?? ''}} </small> @endif
+                        @if ($topic->term['termname'] == 'Spring Term') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> <br> <small>{{$topic->school['name'] ?? ''}} </small> @endif
+                    @endforeach
+                    </td>
+                    <td class="term">
+                    @foreach ($topicsy10 as $topic)
+                        @if ($topic->term['termname'] == 'Summer Term 1') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> <br> <small>{{$topic->school['name'] ?? ''}} </small> @endif
+                        @if ($topic->term['termname'] == 'Summer Term') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> @endif
+                    @endforeach
+                    </td>
+                    <td class="term">
+                    @foreach ($topicsy10 as $topic)
+                        @if ($topic->term['termname'] == 'Summer Term 2') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> <br> <small>{{$topic->school['name'] ?? ''}} </small> @endif
+                        @if ($topic->term['termname'] == 'Summer Term') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> <br> <small>{{$topic->school['name'] ?? ''}} </small> @endif
+                    @endforeach
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pr-3"><button class="btn btn-sm btn-outline text-dark text-left">Year 11</button></td>
+                    <td class="term">
+                    @foreach ($topicsy11 as $topic)
+                        @if ($topic->term['termname'] == 'Autumn Term 1') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> <br> <small>{{$topic->school['name'] ?? ''}} </small> @endif
+                        @if ($topic->term['termname'] == 'Autumn Term') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> @endif
+                    @endforeach
+                    </td>
+                    <td class="term">
+                    @foreach ($topicsy11 as $topic)
+                        @if ($topic->term['termname'] == 'Autumn Term 2') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> <br> <small>{{$topic->school['name'] ?? ''}} </small> @endif
+                        @if ($topic->term['termname'] == 'Autumn Term') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> <br> <small>{{$topic->school['name'] ?? ''}} </small> @endif
+                    @endforeach
+                    </td>
+                    <td class="term">
+                    @foreach ($topicsy11 as $topic)
+                        @if ($topic->term['termname'] == 'Spring Term 1') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> <br> <small>{{$topic->school['name'] ?? ''}} </small> @endif
+                        @if ($topic->term['termname'] == 'Spring Term') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> @endif
+                    @endforeach
+                    </td>
+                    <td class="term">
+                    @foreach ($topicsy11 as $topic)
+                        @if ($topic->term['termname'] == 'Spring Term 2') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> <br> <small>{{$topic->school['name'] ?? ''}} </small> @endif
+                        @if ($topic->term['termname'] == 'Spring Term') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> <br> <small>{{$topic->school['name'] ?? ''}} </small> @endif
+                    @endforeach
+                    </td>
+                    <td class="term">
+                    @foreach ($topicsy11 as $topic)
+                        @if ($topic->term['termname'] == 'Summer Term 1') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> <br> <small>{{$topic->school['name'] ?? ''}} </small> @endif
+                        @if ($topic->term['termname'] == 'Summer Term') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> @endif
+                    @endforeach
+                    </td>
+                    <td class="term">
+                    @foreach ($topicsy11 as $topic)
+                        @if ($topic->term['termname'] == 'Summer Term 2') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> <br> <small>{{$topic->school['name'] ?? ''}} </small> @endif
+                        @if ($topic->term['termname'] == 'Summer Term') <a href="{{action('TopicsController@show', $topic->id)}}" class="btn btn-sm btn-block btn-outline text-dark text-left">{{$topic->name}} </a> <br> <small>{{$topic->school['name'] ?? ''}} </small> @endif
+                    @endforeach
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+<section id="TopicList">
     <div class="col-12 my-3 px-0 d-flex">
         <div class="col-8 pl-0">
             <h1><i class="fas fa-fw fa-list"></i>&nbsp;&nbsp;Topics</h1>
@@ -37,6 +258,7 @@
             <a href="{{action('TopicsController@create')}}" class="btn btn-lg btn-outline text-green mb-3 float-right"><i class="fas fa-plus"></i>&nbsp;&nbsp;Add Topic</a>
         </div>
     </div>
+    <hr class="mb-3">
     <div class="table-responsive">
         <table class="table table-hover">
             <thead class="bg-primary text-white">
@@ -85,5 +307,6 @@
             </tbody>
         </table>
     </div>
+</section>
 </div>
 @endsection

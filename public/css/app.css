@@ -19859,6 +19859,24 @@ input[type=checkbox] {
   font-weight: bold;
 }
 
+.table-schema td {
+  vertical-align: top !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  min-width: 12.5% !important;
+  max-width: 12.5% !important;
+  width: 12.5% !important;
+}
+
+.table-schema td .term {
+  vertical-align: top !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  min-width: 12.5% !important;
+  max-width: 12.5% !important;
+  width: 12.5% !important;
+}
+
 footer a {
   color: white;
   text-decoration: none;
