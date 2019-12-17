@@ -15,7 +15,7 @@
                 <input type="text" name="name" class="form-control" id="name" placeholder="Subject Name">
             </div>
         </div>
-        <div class="form-group row m-3">
+        <div class="form-group row m-3 d-none">
             <label for="keystage_id" class="col-sm-2 col-form-label">Key Stage</label>
             <div class="col-sm-10">
                 <select id="keystage_id" name="keystage_id" class="form-control">
@@ -26,7 +26,7 @@
                 </select>
             </div>
         </div>
-        <div class="form-group row m-3">
+        <div class="form-group row m-3 d-none">
             <label for="year_id" class="col-sm-2 col-form-label">Year Taught</label>
             <div class="col-sm-10">
                 <select id="year_id" name="year_id" class="form-control">

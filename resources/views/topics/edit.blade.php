@@ -1,8 +1,24 @@
 @extends('layouts.app')
 @section('content')
 <div class="topics container">
-        <h6 class="text-muted">{{$topic->subject['name']}} </small></h6>
-        <h1 class="display-4">Add Topic</h1>
+    <h6 class="text-muted"><a href="{{action('SubjectsController@show', $topic->subject['id'])}}">{{$topic->subject['name']}}</a><small> {{$topic->year['name']}} {{$topic->term['termname']}} </small></h6>
+    <div class="col-12 mt-3 px-0 d-flex">
+        <div class="col-8 pl-0">
+            <h1 class="display-4"><i class="fas fa-fw fa-chalkboard-teacher"></i>&nbsp;&nbsp;Edit {{$topic->name}}</h1>
+            <div class="pl-0">
+                @foreach ($topic->school as $school)
+                <span class="text-muted">{{$school->name ?? ''}} </span> &nbsp;&nbsp;
+                @endforeach
+            </div>
+        </div>
+        <div class="col-2 offset-2 pr-0">
+            <form action="/topics/{{ $topic->id }}" method="POST">
+                @method('DELETE')
+                {{ csrf_field() }}
+                <button class="btn btn-outline text-red mb-0 get-down-right"><i class="fas fa-trash"></i>&nbsp;&nbsp;Delete Topic</button>
+            </form>
+        </div>
+    </div>
     <hr>
     <div class="row">
     <div class="col-md-12 mb-3">

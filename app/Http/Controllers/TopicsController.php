@@ -193,8 +193,27 @@ class TopicsController extends Controller
         return redirect('/topics/'. $id);
     }
 
-    public function destroy(Topics $topics)
+    public function destroy($id)
     {
-        //
+        $topic = Topic::with('term')
+                ->with('school')
+                ->with('subject')
+                ->with('clink')
+                ->with('clinked')
+                ->find($id);
+
+        if(!empty($topic->school)) {
+            $topic->school()->detach();
+        }
+        if(!empty($topic->clink)) {
+            $topic->clink()->detach();
+        }
+        if(!empty($topic->clinked)) {
+            $topic->clinked()->detach();
+        }
+
+        $topic->delete();
+        return redirect('/topics');
+
     }
 }
